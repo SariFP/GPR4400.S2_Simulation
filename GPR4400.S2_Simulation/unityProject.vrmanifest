@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.gpr4400.s2_simulation.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Sari\\Documents\\GamesProject\\GPR4400_Simulation\\GPR4400.S2_Simulation\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "GPR4400.S2_Simulation [Testing]"
+        }
+      }
+    }
+  ]
+}
