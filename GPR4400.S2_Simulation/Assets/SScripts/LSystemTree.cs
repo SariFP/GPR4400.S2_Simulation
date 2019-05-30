@@ -53,7 +53,7 @@ public class LSystemTree : MonoBehaviour
 
                 destination += v.replacement;
 
-                //DoStuff(v.action);
+                DoStuff(v.action);
             }
         }
         source = destination;
@@ -72,6 +72,10 @@ public class LSystemTree : MonoBehaviour
                 currentPosition = position;
                 currentDirection = direction;
                 break;
+            //case Actions.LOAD_POS_DIR_DIVIDE:
+            //    currentPosition = position;
+            //    currentDirection = direction;
+            //    break;
             case Actions.MOVE_FWD:
                 currentPosition += Quaternion.Euler(0, 0, currentDirection) * Vector3.up;
                 break;
@@ -79,6 +83,10 @@ public class LSystemTree : MonoBehaviour
                 position = currentPosition;
                 direction = currentDirection;
                 break;
+            //case Actions.SAVE_POS_DIR_MULTIPLY:
+            //    position = currentPosition;
+            //    direction = currentDirection;
+            //    break;
             case Actions.TURN_LEFT:
                 currentDirection = rotationDelta;
                 break;
@@ -107,6 +115,9 @@ public class LSystemTree : MonoBehaviour
             DestroyImmediate(transform.GetChild(children).gameObject);
             children--;
         }
+
+        currentDirection = 0;
+        currentPosition = Vector3.zero;
     }
 
     [Serializable]
@@ -123,5 +134,5 @@ public class LSystemTree : MonoBehaviour
         public Actions id;
     }
 
-    public enum Actions { DRAW_LINE, MOVE_FWD, TURN_LEFT, TURN_RIGHT, SAVE_POS_DIR, LOAD_POS_DIR }
+    public enum Actions { DRAW_LINE, MOVE_FWD, TURN_LEFT, TURN_RIGHT, SAVE_POS_DIR, LOAD_POS_DIR/*, SAVE_POS_DIR_MULTIPLY, LOAD_POS_DIR_DIVIDE*/ }
 }
