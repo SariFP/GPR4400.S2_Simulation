@@ -9,6 +9,7 @@ public class LSystemTree : MonoBehaviour
     public Vector3 currentPosition;
     public float currentDirection;
     public float rotationDelta;
+    
 
     private Vector3 position;
     private float direction;
@@ -68,31 +69,31 @@ public class LSystemTree : MonoBehaviour
                 temp.transform.position = currentPosition;
                 currentPosition += Quaternion.Euler(0, 0, currentDirection) * Vector3.up;
                 break;
+            case Actions.MOVE_FWD:
+                currentPosition += Quaternion.Euler(0, 0, currentDirection) * Vector3.up;
+                break;
             case Actions.LOAD_POS_DIR:
                 currentPosition = position;
                 currentDirection = direction;
-                break;
-            //case Actions.LOAD_POS_DIR_DIVIDE:
-            //    currentPosition = position;
-            //    currentDirection = direction;
-            //    break;
-            case Actions.MOVE_FWD:
-                currentPosition += Quaternion.Euler(0, 0, currentDirection) * Vector3.up;
                 break;
             case Actions.SAVE_POS_DIR:
                 position = currentPosition;
                 direction = currentDirection;
                 break;
-            //case Actions.SAVE_POS_DIR_MULTIPLY:
-            //    position = currentPosition;
-            //    direction = currentDirection;
-            //    break;
             case Actions.TURN_LEFT:
                 currentDirection = rotationDelta;
                 break;
             case Actions.TURN_RIGHT:
                 currentDirection = -rotationDelta;
                 break;
+            //case Actions.LOAD_POS_DIR_DIVIDE:
+            //    currentPosition = position;
+            //    currentDirection = direction;
+            //    break;
+            //case Actions.SAVE_POS_DIR_MULTIPLY:
+            //    position = currentPosition;
+            //    direction = currentDirection;
+            //    break;
             default:
                 break;
         }

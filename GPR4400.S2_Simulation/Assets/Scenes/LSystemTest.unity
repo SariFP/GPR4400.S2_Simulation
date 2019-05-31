@@ -326,17 +326,41 @@ MonoBehaviour:
   Prefab: {fileID: 8160789800213363571, guid: 48a202c808fde914084799901bc4ada8, type: 3}
   currentPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
-  rotationDelta: 0
+  rotationDelta: 50
   variables:
   - symbol: F
     action:
       id: 0
-    replacement: FG
+    replacement: FG+[+F-F-F]
   - symbol: G
     action:
       id: 0
     replacement: F
-  source: 
+  - symbol: +
+    action:
+      id: 2
+    replacement: 
+  - symbol: '-'
+    action:
+      id: 3
+    replacement: 
+  - symbol: '['
+    action:
+      id: 4
+    replacement: 
+  - symbol: ']'
+    action:
+      id: 5
+    replacement: 
+  - symbol: f
+    action:
+      id: 1
+    replacement: 
+  - symbol: g
+    action:
+      id: 1
+    replacement: 
+  source: F
   destination: 
 --- !u!4 &2065783037
 Transform:
