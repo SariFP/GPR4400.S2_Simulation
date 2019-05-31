@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
 using System;
 
 public class LSystemTree : MonoBehaviour
@@ -9,7 +10,7 @@ public class LSystemTree : MonoBehaviour
     public Vector3 currentPosition;
     public float currentDirection;
     public float rotationDelta;
-    
+
 
     private Vector3 position;
     private float direction;
@@ -72,28 +73,20 @@ public class LSystemTree : MonoBehaviour
             case Actions.MOVE_FWD:
                 currentPosition += Quaternion.Euler(0, 0, currentDirection) * Vector3.up;
                 break;
-            case Actions.LOAD_POS_DIR:
-                currentPosition = position;
-                currentDirection = direction;
-                break;
-            case Actions.SAVE_POS_DIR:
-                position = currentPosition;
-                direction = currentDirection;
-                break;
             case Actions.TURN_LEFT:
                 currentDirection = rotationDelta;
                 break;
             case Actions.TURN_RIGHT:
                 currentDirection = -rotationDelta;
                 break;
-            //case Actions.LOAD_POS_DIR_DIVIDE:
-            //    currentPosition = position;
-            //    currentDirection = direction;
-            //    break;
-            //case Actions.SAVE_POS_DIR_MULTIPLY:
-            //    position = currentPosition;
-            //    direction = currentDirection;
-            //    break;
+            case Actions.POP:
+                currentPosition = position;
+                currentDirection = direction;
+                break;
+            case Actions.PUSH:
+                position = currentPosition;
+                direction = currentDirection;
+                break;
             default:
                 break;
         }
@@ -135,5 +128,5 @@ public class LSystemTree : MonoBehaviour
         public Actions id;
     }
 
-    public enum Actions { DRAW_LINE, MOVE_FWD, TURN_LEFT, TURN_RIGHT, SAVE_POS_DIR, LOAD_POS_DIR/*, SAVE_POS_DIR_MULTIPLY, LOAD_POS_DIR_DIVIDE*/ }
+    public enum Actions { DRAW_LINE, MOVE_FWD, TURN_LEFT, TURN_RIGHT, PUSH, POP }
 }

@@ -331,11 +331,11 @@ MonoBehaviour:
   - symbol: F
     action:
       id: 0
-    replacement: FG+[+F-F-F]
-  - symbol: G
+    replacement: FF+[F-F-F]
+  - symbol: X
     action:
       id: 0
-    replacement: F
+    replacement: FF
   - symbol: +
     action:
       id: 2
