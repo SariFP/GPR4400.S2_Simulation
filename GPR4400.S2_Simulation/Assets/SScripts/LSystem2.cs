@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-public enum Variations { T1, T2, T3, T4, T5 }
+public enum Variations { T1, T2, T3, T4 }
 
 public class LSystem2 : MonoBehaviour
 {
@@ -82,10 +82,12 @@ public class LSystem2 : MonoBehaviour
                     if (currentString[(i + 1) % currentString.Length] == 'X')
                     {
                         GameObject fruit = Instantiate(BranchWithFruit, transform.position, transform.rotation);
+                        fruit.transform.SetParent(Tree.transform);
                     }
                     else
                     {
                         GameObject branch = Instantiate(Branch, transform.position, transform.rotation);
+                        branch.transform.SetParent(Tree.transform);
                     }
                     break;
                 case '[':
