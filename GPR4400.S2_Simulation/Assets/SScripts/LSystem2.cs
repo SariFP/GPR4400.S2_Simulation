@@ -3,18 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-public struct NexusPoint
-{
-    public Vector3 position;
-    public Quaternion rotation;
-
-    public NexusPoint(Vector3 pos, Quaternion rot)
-    {
-        position = pos;
-        rotation = rot;
-    }
-}
-
 public class LSystem2 : MonoBehaviour
 {
 
@@ -42,7 +30,7 @@ public class LSystem2 : MonoBehaviour
 
         rules = new Dictionary<char, string>
         {
-            {'X', "[F[-X+F[+FX]][*-X+F[+FX]][/-X+F[+FX]-X]]" },
+            {'X', "[F[-X+F[+FX]][/-X+F[+FX]-X]]" },
             { 'F', "FF" }
         };
 
@@ -119,6 +107,18 @@ public class LSystem2 : MonoBehaviour
                     break;
             }
         }
-    }    
+    }
+}
+
+public struct NexusPoint
+{
+    public Vector3 position;
+    public Quaternion rotation;
+
+    public NexusPoint(Vector3 pos, Quaternion rot)
+    {
+        position = pos;
+        rotation = rot;
+    }
 }
 
