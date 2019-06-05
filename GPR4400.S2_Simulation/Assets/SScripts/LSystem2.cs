@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
+public enum Variations { T1, T2, T3, T4, T5 }
+
 public class LSystem2 : MonoBehaviour
 {
 
@@ -22,20 +24,23 @@ public class LSystem2 : MonoBehaviour
     private const string axiom = "X";
     private string currentString = string.Empty;
     private Vector3 currentPosition = Vector3.zero;
-
+    public Variations id;
 
     void Start()
     {
         nexusStack = new Stack<NexusPoint>();
 
-        rules = new Dictionary<char, string>
-        {
-            {'X', "[F[-X+F[+FX]][/-X+F[+FX]-X]]" },
-            { 'F', "FF" }
-        };
-
+        PicVariations();
         Generate();
     }
+
+    //private void Update()
+    //{
+    //    if (Input.GetButtonDown("Jump"))
+    //    {
+    //        Generate();
+    //    }
+    //}
 
     private void Generate()
     {
@@ -108,6 +113,44 @@ public class LSystem2 : MonoBehaviour
             }
         }
     }
+
+    public void PicVariations()
+    {
+        switch (id)
+        {
+            case Variations.T1:
+                rules = new Dictionary<char, string>
+                {   /*schräger, aber normaler Baum*/
+                    {'X', "[F[-X+F[+FX]][/-X+F[+FX]-X]]" },
+                    {'F', "FF" }
+                };
+                break;
+
+            case Variations.T2:
+                rules = new Dictionary<char, string>
+                {   /*sehr einfacher Baum*/
+                    {'X', "F[+FX][*+FX][/+FX]" },
+                    {'F', "FF" }
+                };
+                break;
+
+            case Variations.T3:
+                rules = new Dictionary<char, string>
+                {   /*Busch*/
+                    {'X', "[*+FX]X[+FX][/+F-FX]" },
+                    {'F', "FF" }
+                };
+                break;
+            case Variations.T4:
+                rules = new Dictionary<char, string>
+                {
+                    //proppenvoller Baum
+                    { 'X', "[F[-X + F[+FX]][*-X + F[+FX]][/ -X + F[+FX] - X]]" },
+                    {'F', "FF" }
+                };
+                break;
+        }
+    }
 }
 
 public struct NexusPoint
@@ -121,4 +164,6 @@ public struct NexusPoint
         rotation = rot;
     }
 }
+
+
 
