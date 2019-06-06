@@ -5,7 +5,7 @@ using UnityEngine;
 public class GrowingGems : MonoBehaviour
 {
     public GameObject GemPrefab;
-
+    public float GrowingRate= 0.005f;
     private GameObject newGem;
 
 
@@ -18,7 +18,7 @@ public class GrowingGems : MonoBehaviour
 
     IEnumerator GrowGemCour()
     {
-        for (float f = 0f; f <= 2.5f; f += 0.005f)
+        for (float f = 0f; f <= 1.5f; f += GrowingRate)
         {
             newGem.transform.localScale = new Vector3(f, f, f);
             yield return new WaitForSeconds(.1f);
