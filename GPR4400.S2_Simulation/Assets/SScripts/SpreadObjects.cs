@@ -16,6 +16,10 @@ public class SpreadObjects : MonoBehaviour
     private int terrainSize = 50;
     private Vector3 position;
     private int[,] terrain;
+    private int u;
+    private int w;
+    private int v;
+    System.Random rand = new System.Random();
 
 
     void Start()
@@ -30,7 +34,6 @@ public class SpreadObjects : MonoBehaviour
 
     private void SpreadObjs()
     {
-        System.Random rand = new System.Random();
         for (int x = 0; x < terrainSize; x++)
         {
             for (int y = 0; y < terrainSize; y++)
@@ -49,117 +52,124 @@ public class SpreadObjects : MonoBehaviour
         {
             for (int y = 0; y < terrainSize / 2; y++)
             {
+                u = rand.Next(-30, 30);
+                w = rand.Next(0, 360);
+                v = rand.Next(-30, 30);
+
+                Quaternion quatDir = new Quaternion(0, w, 0, 1);
+                Quaternion quatGrade = new Quaternion(u, w, v, 1);
+
                 if (terrain[x, y] == 4)
                 {
-                    Instantiate(TreePrefab, new Vector3(x, 0, y), Quaternion.identity);
+                    Instantiate(TreePrefab, new Vector3(x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 13)
                 {
-                    Instantiate(TreePrefab, -position, Quaternion.identity);
+                    Instantiate(TreePrefab, new Vector3(-x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 28)
                 {
-                    Instantiate(TreePrefab, new Vector3(-x, 0, y), Quaternion.identity);
+                    Instantiate(TreePrefab, new Vector3(-x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 42)
                 {
-                    Instantiate(TreePrefab, new Vector3(x, 0, -y), Quaternion.identity);
+                    Instantiate(TreePrefab, new Vector3(x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 6)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, y), Quaternion.identity);
+                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 18)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 26)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, y), Quaternion.identity);
+                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 33)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 9)
                 {
-                    Instantiate(PlenteousTreePrefeab, new Vector3(x, 0, y), Quaternion.identity);
+                    Instantiate(PlenteousTreePrefeab, new Vector3(x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 11)
                 {
-                    Instantiate(PlenteousTreePrefeab, -position, Quaternion.identity);
+                    Instantiate(PlenteousTreePrefeab, new Vector3(-x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 27)
                 {
-                    Instantiate(PlenteousTreePrefeab, new Vector3(-x, 0, y), Quaternion.identity);
+                    Instantiate(PlenteousTreePrefeab, new Vector3(-x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 49)
                 {
-                    Instantiate(PlenteousTreePrefeab, new Vector3(x, 0, -y), Quaternion.identity);
+                    Instantiate(PlenteousTreePrefeab, new Vector3(x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 2)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, y), Quaternion.identity);
+                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 23)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 31)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, y), Quaternion.identity);
+                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 44)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 1)
                 {
-                    Instantiate(BushPrefab, new Vector3(x, 0, y), Quaternion.identity);
+                    Instantiate(BushPrefab, new Vector3(x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 17)
                 {
-                    Instantiate(BushPrefab, -position, Quaternion.identity);
+                    Instantiate(BushPrefab, new Vector3(-x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 25)
                 {
-                    Instantiate(BushPrefab, new Vector3(-x, 0, y), Quaternion.identity);
+                    Instantiate(BushPrefab, new Vector3(-x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 35)
                 {
-                    Instantiate(BushPrefab, new Vector3(x, 0, -y), Quaternion.identity);
+                    Instantiate(BushPrefab, new Vector3(x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 12)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, y), Quaternion.identity);
+                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 29)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 34)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, y), Quaternion.identity);
+                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 47)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 5)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, y), Quaternion.identity);
+                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 15)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 21)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, y), Quaternion.identity);
+                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 41)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, -y), quatDir);
                 }
 
                 yield return new WaitForSeconds(.1f);
@@ -173,117 +183,124 @@ public class SpreadObjects : MonoBehaviour
         {
             for (int y = terrainSize; y > terrainSize / 2; y--)
             {
+                u = rand.Next(-30, 30);
+                w = rand.Next(0, 360);
+                v = rand.Next(-30, 30);
+
+                Quaternion quatDir = new Quaternion(0, w, 0, 1);
+                Quaternion quatGrade = new Quaternion(u, w, v, 1);
+
                 if (terrain[x, y] == 4)
                 {
-                    Instantiate(TreePrefab, new Vector3(x, 0, y), Quaternion.identity);
+                    Instantiate(TreePrefab, new Vector3(x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 13)
                 {
-                    Instantiate(TreePrefab, -position, Quaternion.identity);
+                    Instantiate(TreePrefab, new Vector3(-x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 28)
                 {
-                    Instantiate(TreePrefab, new Vector3(-x, 0, y), Quaternion.identity);
+                    Instantiate(TreePrefab, new Vector3(-x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 42)
                 {
-                    Instantiate(TreePrefab, new Vector3(x, 0, -y), Quaternion.identity);
+                    Instantiate(TreePrefab, new Vector3(x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 6)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, y), Quaternion.identity);
+                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 18)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 26)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, y), Quaternion.identity);
+                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 33)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 9)
                 {
-                    Instantiate(PlenteousTreePrefeab, new Vector3(x, 0, y), Quaternion.identity);
+                    Instantiate(PlenteousTreePrefeab, new Vector3(x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 11)
                 {
-                    Instantiate(PlenteousTreePrefeab, -position, Quaternion.identity);
+                    Instantiate(PlenteousTreePrefeab, new Vector3(-x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 27)
                 {
-                    Instantiate(PlenteousTreePrefeab, new Vector3(-x, 0, y), Quaternion.identity);
+                    Instantiate(PlenteousTreePrefeab, new Vector3(-x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 49)
                 {
-                    Instantiate(PlenteousTreePrefeab, new Vector3(x, 0, -y), Quaternion.identity);
+                    Instantiate(PlenteousTreePrefeab, new Vector3(x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 2)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, y), Quaternion.identity);
+                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 23)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 31)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, y), Quaternion.identity);
+                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 44)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 1)
                 {
-                    Instantiate(BushPrefab, new Vector3(x, 0, y), Quaternion.identity);
+                    Instantiate(BushPrefab, new Vector3(x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 17)
                 {
-                    Instantiate(BushPrefab, -position, Quaternion.identity);
+                    Instantiate(BushPrefab, new Vector3(-x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 25)
                 {
-                    Instantiate(BushPrefab, new Vector3(-x, 0, y), Quaternion.identity);
+                    Instantiate(BushPrefab, new Vector3(-x, 0, y), quatDir);
                 }
                 if (terrain[x, y] == 35)
                 {
-                    Instantiate(BushPrefab, new Vector3(x, 0, -y), Quaternion.identity);
+                    Instantiate(BushPrefab, new Vector3(x, 0, -y), quatDir);
                 }
                 if (terrain[x, y] == 12)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, y), Quaternion.identity);
+                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 29)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 34)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, y), Quaternion.identity);
+                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 47)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 5)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, y), Quaternion.identity);
+                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 15)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 21)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, y), Quaternion.identity);
+                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 41)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, -y), Quaternion.identity);
+                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, -y), quatDir);
                 }
 
                 yield return new WaitForSeconds(.1f);

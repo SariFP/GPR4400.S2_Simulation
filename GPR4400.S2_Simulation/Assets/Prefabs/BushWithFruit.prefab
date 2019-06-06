@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6757147651130694452}
   - component: {fileID: 5090060133622646881}
   m_Layer: 0
-  m_Name: BranchWithFruit
+  m_Name: BushWithFruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a319d6451248fcf418eea6e84774560d, type: 2}
+  - {fileID: 2100000, guid: 035a603de1a46e84c9701b83a91d57cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 3472942211150625723}
   - component: {fileID: 6204116907393773167}
   - component: {fileID: 8671608160941054847}
-  - component: {fileID: 4658663240800186689}
+  - component: {fileID: 7368017972663640459}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b7509fab46f399438e329951195814e, type: 2}
+  - {fileID: 2100000, guid: 2bbe5b8cfdd9aaa438999f9b4d33b74c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,7 +185,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!122 &4658663240800186689
+--- !u!122 &7368017972663640459
 Halo:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,5 +195,5 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294002970
-  m_Size: 0.045
+    rgba: 4292340068
+  m_Size: 0.035

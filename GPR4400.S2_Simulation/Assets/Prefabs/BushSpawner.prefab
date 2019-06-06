@@ -51,8 +51,8 @@ MonoBehaviour:
   Variance: 120
   Tree: {fileID: 7643013270629971821}
   TreeParent: {fileID: 7643013270629971821}
-  Branch: {fileID: 4108171823193562729, guid: cf43e34c54a430343add61d021653924, type: 3}
-  BranchWithFruit: {fileID: 438828298248539899, guid: 9ed179c6d378e764098fda91ccebe5ef,
+  Branch: {fileID: 4108171823193562729, guid: a2bfda26ab78a254694f7bd7ba2accfc, type: 3}
+  BranchWithFruit: {fileID: 438828298248539899, guid: adace95f5c2e0eb498b47726814c1e4c,
     type: 3}
   id: 2
 --- !u!1 &7643013270629971821
