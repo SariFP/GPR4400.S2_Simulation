@@ -18,7 +18,7 @@ public class GrowingGems : MonoBehaviour
 
     IEnumerator GrowGemCour()
     {
-        for (float f = 0f; f <= 3.5; f += 0.01f)
+        for (float f = 0f; f <= 2.5f; f += 0.005f)
         {
             newGem.transform.localScale = new Vector3(f, f, f);
             yield return new WaitForSeconds(.1f);

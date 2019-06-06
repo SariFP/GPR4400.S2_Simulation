@@ -2,58 +2,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpreadTrees : MonoBehaviour
+public class SpreadObjects : MonoBehaviour
 {
     public GameObject TreeSpawnerPrefab;
     public GameObject GemSpawnerPrefab;
 
-    private Terrain Terrain;
-    private int terrainSize = 500;
+    //public Terrain Terrain;
+    private int terrainSize = 1000;
     private Vector3 position;
     private int[,] terrain;
 
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        terrain = new int[500,500];
-        Terrain = GetComponent<Terrain>();
+        terrain = new int[1000, 1000];
+        //Terrain = GetComponent<Terrain>();
         //terrainSize = Terrain.terrainData.size;
-        SpreadObjects();
+        SpreadObjs();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    private void SpreadObjects()
+
+    private void SpreadObjs()
     {
         System.Random rand = new System.Random();
         for (int x = 0; x < terrainSize; x++)
         {
             for (int y = 0; y < terrainSize; y++)
             {
-                terrain[x, y] = rand.Next(5); // Set a random type between 1 - 4
+                terrain[x, y] = rand.Next(100);
             }
         }
 
+        StartCoroutine(InstantiateObjs());
+    }
+
+    IEnumerator InstantiateObjs()
+    { 
         for (int x = 0; x < terrainSize; x++)
         {
             for (int y = 0; y < terrainSize; y++)
             {
-                if (terrain[x, y] == 2)
+                if (terrain[x, y] == 14)
                 {
-                    position = new Vector3(x, 0, y);
+                    position = new Vector3(x - 500, 0, y - 500);
                     Instantiate(TreeSpawnerPrefab, position, Quaternion.identity);
                 }
-                if (terrain[x, y] == 1)
+                if (terrain[x, y] == 26)
                 {
-                    position = new Vector3(x, 0, y);
+                    position = new Vector3(x - 500, 0, y - 500);
                     Instantiate(GemSpawnerPrefab, position, Quaternion.identity);
                 }
+
+                yield return new WaitForSeconds(1);
             }
         }
     }

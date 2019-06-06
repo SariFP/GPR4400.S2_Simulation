@@ -68,6 +68,11 @@ public class LSystem2 : MonoBehaviour
             sb = new StringBuilder();
         }
 
+        StartCoroutine(GenerateTree());
+    }
+
+    IEnumerator GenerateTree()
+    {
         for (int i = 0; i < currentString.Length; i++)
         {
 
@@ -113,6 +118,7 @@ public class LSystem2 : MonoBehaviour
                 default:
                     break;
             }
+            yield return new WaitForSeconds(.1f);
         }
     }
 
