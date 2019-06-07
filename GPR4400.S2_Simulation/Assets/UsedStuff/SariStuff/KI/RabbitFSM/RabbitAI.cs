@@ -32,7 +32,7 @@ public class RabbitAI : MonoBehaviour
 
     IEnumerator WaitAMoment()
     {
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSecondsRealtime(5);
         anim.SetBool("reachedWaypoint", false);
     }
 }
