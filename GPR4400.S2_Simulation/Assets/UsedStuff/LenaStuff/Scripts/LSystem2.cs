@@ -14,7 +14,7 @@ public class LSystem2 : MonoBehaviour
     public float Angle = 30f;
     public float Variance = 120f;
 
-    public GameObject Tree;
+    //public GameObject Tree;
     public GameObject TreeParent;
     public GameObject Branch;
     public GameObject BranchWithFruit;
@@ -44,7 +44,7 @@ public class LSystem2 : MonoBehaviour
 
     private void Generate()
     {
-        Tree = Instantiate(TreeParent);
+        //Tree = Instantiate(TreeParent);
 
         currentString = axiom;
 
@@ -87,12 +87,12 @@ public class LSystem2 : MonoBehaviour
                     if (currentString[(i + 1) % currentString.Length] == 'X')
                     {
                         GameObject fruit = Instantiate(BranchWithFruit, transform.position, transform.rotation);
-                        fruit.transform.SetParent(Tree.transform);
+                        fruit.transform.SetParent(TreeParent.transform);
                     }
                     else
                     {
                         GameObject branch = Instantiate(Branch, transform.position, transform.rotation);
-                        branch.transform.SetParent(Tree.transform);
+                        branch.transform.SetParent(TreeParent.transform);
                     }
                     break;
                 case '[':

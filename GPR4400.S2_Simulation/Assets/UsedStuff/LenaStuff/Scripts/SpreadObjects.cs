@@ -52,11 +52,14 @@ public class SpreadObjects : MonoBehaviour
         {
             for (int y = 0; y < terrainSize / 2; y++)
             {
-                u = rand.Next(-30, 30);
-                w = rand.Next(0, 360);
-                v = rand.Next(-30, 30);
+                u = Random.Range(-30, 30);
+                w = Random.Range(0, 360);
+                v = Random.Range(-30, 30);
 
+                Debug.Log("w: " + w);
                 Quaternion quatDir = new Quaternion(0, w, 0, 1);
+                Debug.Log("quatDir: " + quatDir);
+
                 Quaternion quatGrade = new Quaternion(u, w, v, 1);
 
                 if (terrain[x, y] == 4)
