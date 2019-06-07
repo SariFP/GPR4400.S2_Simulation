@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6757147651130694452}
   - component: {fileID: 5090060133622646881}
   m_Layer: 0
-  m_Name: BranchWithFruit
+  m_Name: PlentBranchWithFruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a319d6451248fcf418eea6e84774560d, type: 2}
+  - {fileID: 2100000, guid: 6b7509fab46f399438e329951195814e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b7509fab46f399438e329951195814e, type: 2}
+  - {fileID: 2100000, guid: a319d6451248fcf418eea6e84774560d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,4 +196,4 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4294002970
-  m_Size: 0.045
+  m_Size: 0.03
