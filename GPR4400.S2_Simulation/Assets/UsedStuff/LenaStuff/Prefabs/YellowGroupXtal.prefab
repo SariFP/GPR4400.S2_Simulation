@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6033882703342108607}
   - component: {fileID: 6033882703342108606}
   m_Layer: 0
-  m_Name: YellowSingleGemSpawner
+  m_Name: YellowGroupXtal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9ffd7972a363b49ad3e47a4a33977b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemPrefab: {fileID: 1081370643697144, guid: 82a29d2770bb25c4eaca09fabcc1b82e, type: 3}
-  GrowingRate: 0.008
+  XtalPrefab: {fileID: 1687585920761738, guid: a99c819eadae61f4cb34295f7aed6327, type: 3}
+  GrowingRate: 0.005
+  TargetHeigth: 3

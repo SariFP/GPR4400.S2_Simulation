@@ -171,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4230676673873434
 Transform:
   m_ObjectHideFlags: 0
@@ -5225,6 +5225,7 @@ GameObject:
   - component: {fileID: 4717931082922790}
   - component: {fileID: 33733820749618952}
   - component: {fileID: 23304836275496008}
+  - component: {fileID: 254752723106755735}
   m_Layer: 0
   m_Name: Crystal_3_Particle
   m_TagString: Untagged
@@ -5274,7 +5275,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -5299,6 +5300,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &254752723106755735
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687585920761738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 5ce8f48e0d1e2dc42850e285d0522ed8, type: 3}
 --- !u!1 &1699832502810320
 GameObject:
   m_ObjectHideFlags: 0
@@ -5524,9 +5539,9 @@ ParticleSystem:
       maxColor: {r: 0.6397059, g: 0.40922365, b: 0.40922365, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.07505071, b: 0, a: 0}
-        key1: {r: 0.58823526, g: 0.9488844, b: 1, a: 1}
-        key2: {r: 1, g: 0.39310342, b: 0, a: 1}
+        key0: {r: 0.12775902, g: 0.22484489, b: 0.9339623, a: 0}
+        key1: {r: 0.9963672, g: 1, b: 0, a: 1}
+        key2: {r: 0.019579923, g: 0.0754717, b: 0.07306068, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 1}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -10395,9 +10410,9 @@ ParticleSystem:
       maxColor: {r: 0.6397059, g: 0.40922365, b: 0.40922365, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.07505071, b: 0, a: 0}
-        key1: {r: 0, g: 1, b: 0.006896496, a: 1}
-        key2: {r: 0, g: 1, b: 0.95862055, a: 1}
+        key0: {r: 0.12775902, g: 0.22484489, b: 0.9339623, a: 1}
+        key1: {r: 0.9963672, g: 1, b: 0, a: 1}
+        key2: {r: 0.019579923, g: 0.0754717, b: 0.07306068, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 1}
         key5: {r: 0, g: 0, b: 0, a: 0}

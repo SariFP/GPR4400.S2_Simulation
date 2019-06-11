@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Iterations: 4
-  Length: 0.05
+  Length: 0.1
   Width: 1
   Angle: 30
   Variance: 120

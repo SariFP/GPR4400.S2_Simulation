@@ -37,44 +37,47 @@ public class ExpandingMushrooms : MonoBehaviour
         z = rand.Next(zMin, zMax);
         hikingPoint = new Vector3(x, 0, z);
         hikingPoints.Add(hikingPoint);
+        StartCoroutine(SentHikingPoint());
     }
 
     void Update()
     {
-        if (!ExistingNeighbors.Contains(hikingPoint))
-        {
-            SentHikingPoint();
-        }
-        else
-        {
-            Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
-        }
+
+
+        //SentHikingPoint();
+
     }
 
 
-    private void SentHikingPoint()
+    /* private void*/
+    IEnumerator SentHikingPoint()
     {
-        int q = Random.Range(1, 5);
-        Debug.Log("q= " + q);
-        if (q == 1)
+        for (int i = 0; i < 500; i++)
         {
-            hikingPoint += new Vector3(0.02f, 0, 0);
-            Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
-        }
-        else if (q == 2)
-        {
-            hikingPoint += new Vector3(0, 0, -0.02f);
-            Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
-        }
-        else if (q == 3)
-        {
-            hikingPoint += new Vector3(-0.02f, 0, 0);
-            Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
-        }
-        else if (q == 4)
-        {
-            hikingPoint += new Vector3(0, 0, 0.02f);
-            Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
+            int q = Random.Range(1, 5);
+            Debug.Log("q= " + q);
+            if (q == 1)
+            {
+                hikingPoint += new Vector3(0.2f, 0, 0);
+                Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
+            }
+            else if (q == 2)
+            {
+                hikingPoint += new Vector3(0, 0, -0.2f);
+                Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
+            }
+            else if (q == 3)
+            {
+                hikingPoint += new Vector3(-0.2f, 0, 0);
+                Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
+            }
+            else if (q == 4)
+            {
+                hikingPoint += new Vector3(0, 0, 0.2f);
+                Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
+            }
+
+            yield return new WaitForSeconds(.5f);
         }
     }
 }

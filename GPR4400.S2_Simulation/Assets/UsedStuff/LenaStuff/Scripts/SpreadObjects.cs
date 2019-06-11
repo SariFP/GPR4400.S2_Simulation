@@ -7,10 +7,12 @@ public class SpreadObjects : MonoBehaviour
     public GameObject TreePrefab;
     public GameObject PlenteousTreePrefeab;
     public GameObject BushPrefab;
-    public GameObject BlueSingleGemPrefab;
-    public GameObject PurpleSingleGemPrefab;
-    public GameObject YellowSinglgeGemPrefab;
-    public GameObject BlueGroupGemPrefab;
+    public GameObject PinkSingleXtalPrefab;
+    public GameObject GreenSingleXtalPrefab;
+    public GameObject BlueSingleXtalPrefab;
+    public GameObject PinkGroupXtalPrefab;
+    public GameObject YellowGroupXtalPrefab;
+
 
     //public Terrain Terrain;
     private int terrainSize = 50;
@@ -55,11 +57,7 @@ public class SpreadObjects : MonoBehaviour
                 u = Random.Range(-30, 30);
                 w = Random.Range(0, 360);
                 v = Random.Range(-30, 30);
-
-                Debug.Log("w: " + w);
                 Quaternion quatDir = new Quaternion(0, w, 0, 1);
-                Debug.Log("quatDir: " + quatDir);
-
                 Quaternion quatGrade = new Quaternion(u, w, v, 1);
 
                 if (terrain[x, y] == 4)
@@ -80,19 +78,19 @@ public class SpreadObjects : MonoBehaviour
                 }
                 if (terrain[x, y] == 6)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, y), quatDir);
+                    Instantiate(BlueSingleXtalPrefab, new Vector3(x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 18)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, -y), quatDir);
+                    Instantiate(BlueSingleXtalPrefab, new Vector3(-x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 26)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, y), quatDir);
+                    Instantiate(BlueSingleXtalPrefab, new Vector3(-x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 33)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, -y), quatDir);
+                    Instantiate(BlueSingleXtalPrefab, new Vector3(x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 9)
                 {
@@ -112,19 +110,19 @@ public class SpreadObjects : MonoBehaviour
                 }
                 if (terrain[x, y] == 2)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, y), quatGrade);
+                    Instantiate(PinkSingleXtalPrefab, new Vector3(x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 23)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
+                    Instantiate(PinkSingleXtalPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 31)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, y), quatGrade);
+                    Instantiate(PinkSingleXtalPrefab, new Vector3(-x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 44)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, -y), quatGrade);
+                    Instantiate(PinkSingleXtalPrefab, new Vector3(x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 1)
                 {
@@ -144,35 +142,35 @@ public class SpreadObjects : MonoBehaviour
                 }
                 if (terrain[x, y] == 12)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, y), quatGrade);
+                    Instantiate(YellowGroupXtalPrefab, new Vector3(x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 29)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
+                    Instantiate(YellowGroupXtalPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 34)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, y), quatGrade);
+                    Instantiate(YellowGroupXtalPrefab, new Vector3(-x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 47)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, -y), quatGrade);
+                    Instantiate(YellowGroupXtalPrefab, new Vector3(x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 5)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, y), quatDir);
+                    Instantiate(PinkGroupXtalPrefab, new Vector3(x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 15)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, -y), quatDir);
+                    Instantiate(PinkGroupXtalPrefab, new Vector3(-x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 21)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, y), quatDir);
+                    Instantiate(PinkGroupXtalPrefab, new Vector3(-x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 41)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, -y), quatDir);
+                    Instantiate(PinkGroupXtalPrefab, new Vector3(x, -0.1f, -y), quatDir);
                 }
 
                 yield return new WaitForSeconds(.1f);
@@ -211,19 +209,19 @@ public class SpreadObjects : MonoBehaviour
                 }
                 if (terrain[x, y] == 6)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, y), quatDir);
+                    Instantiate(BlueSingleXtalPrefab, new Vector3(x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 18)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, -y), quatDir);
+                    Instantiate(BlueSingleXtalPrefab, new Vector3(-x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 26)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(-x, -0.1f, y), quatDir);
+                    Instantiate(BlueSingleXtalPrefab, new Vector3(-x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 33)
                 {
-                    Instantiate(BlueSingleGemPrefab, new Vector3(x, -0.1f, -y), quatDir);
+                    Instantiate(BlueSingleXtalPrefab, new Vector3(x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 9)
                 {
@@ -243,19 +241,19 @@ public class SpreadObjects : MonoBehaviour
                 }
                 if (terrain[x, y] == 2)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, y), quatGrade);
+                    Instantiate(PinkSingleXtalPrefab, new Vector3(x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 23)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
+                    Instantiate(PinkSingleXtalPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 31)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(-x, -0.1f, y), quatGrade);
+                    Instantiate(PinkSingleXtalPrefab, new Vector3(-x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 44)
                 {
-                    Instantiate(PurpleSingleGemPrefab, new Vector3(x, -0.1f, -y), quatGrade);
+                    Instantiate(PinkSingleXtalPrefab, new Vector3(x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 1)
                 {
@@ -275,35 +273,35 @@ public class SpreadObjects : MonoBehaviour
                 }
                 if (terrain[x, y] == 12)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, y), quatGrade);
+                    Instantiate(YellowGroupXtalPrefab, new Vector3(x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 29)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
+                    Instantiate(YellowGroupXtalPrefab, new Vector3(-x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 34)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(-x, -0.1f, y), quatGrade);
+                    Instantiate(YellowGroupXtalPrefab, new Vector3(-x, -0.1f, y), quatGrade);
                 }
                 if (terrain[x, y] == 47)
                 {
-                    Instantiate(YellowSinglgeGemPrefab, new Vector3(x, -0.1f, -y), quatGrade);
+                    Instantiate(YellowGroupXtalPrefab, new Vector3(x, -0.1f, -y), quatGrade);
                 }
                 if (terrain[x, y] == 5)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, y), quatDir);
+                    Instantiate(PinkGroupXtalPrefab, new Vector3(x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 15)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, -y), quatDir);
+                    Instantiate(PinkGroupXtalPrefab, new Vector3(-x, -0.1f, -y), quatDir);
                 }
                 if (terrain[x, y] == 21)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(-x, -0.1f, y), quatDir);
+                    Instantiate(PinkGroupXtalPrefab, new Vector3(-x, -0.1f, y), quatDir);
                 }
                 if (terrain[x, y] == 41)
                 {
-                    Instantiate(BlueGroupGemPrefab, new Vector3(x, -0.1f, -y), quatDir);
+                    Instantiate(PinkGroupXtalPrefab, new Vector3(x, -0.1f, -y), quatDir);
                 }
 
                 yield return new WaitForSeconds(.1f);

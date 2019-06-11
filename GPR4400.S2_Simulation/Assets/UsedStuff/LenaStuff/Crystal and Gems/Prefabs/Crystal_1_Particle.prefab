@@ -643,25 +643,25 @@ ParticleSystem:
       maxColor: {r: 0.6397059, g: 0.40922365, b: 0.40922365, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.11356357, g: 0.8301887, b: 0.17604929, a: 1}
-        key1: {r: 0.46725774, g: 0.09198114, b: 0.5, a: 1}
-        key2: {r: 1, g: 0.68773913, b: 0, a: 1}
+        key0: {r: 0.6509434, g: 0.3194979, b: 0.29169634, a: 0.37254903}
+        key1: {r: 0.990566, g: 0.6401299, b: 0.6623012, a: 1}
+        key2: {r: 0.028, g: 0.9339623, b: 0.5000207, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 1}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 3855
-        ctime1: 36430
+        ctime0: 0
+        ctime1: 31611
         ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 771
-        atime1: 21395
-        atime2: 41634
+        atime0: 0
+        atime1: 27178
+        atime2: 65535
         atime3: 48573
         atime4: 65535
         atime5: 0
@@ -669,7 +669,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 3
-        m_NumAlphaKeys: 4
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5181,6 +5181,7 @@ GameObject:
   - component: {fileID: 4323122069990424}
   - component: {fileID: 33248721924971088}
   - component: {fileID: 23684301353286222}
+  - component: {fileID: -4900242666760545328}
   m_Layer: 9
   m_Name: Crystal_1_Particle
   m_TagString: Untagged
@@ -5229,7 +5230,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -5254,6 +5255,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-4900242666760545328
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621261681309830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 3ab7ab22e4e19b346b95673e94d34a5f, type: 3}
 --- !u!1 &1698654286175766
 GameObject:
   m_ObjectHideFlags: 0

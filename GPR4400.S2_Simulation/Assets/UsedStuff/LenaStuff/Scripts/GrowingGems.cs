@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GrowingGems : MonoBehaviour
 {
-    public GameObject GemPrefab;
+    public GameObject XtalPrefab;
     public float GrowingRate = 0.005f;
     public float TargetHeigth = 1.5f;
-    private GameObject newGem;
+    private GameObject newXtal;
 
 
     void Start()
     {
-        newGem = Instantiate(GemPrefab, transform.position, transform.rotation);
+        newXtal = Instantiate(XtalPrefab, transform.position, transform.rotation);
         StartCoroutine(GrowGemCour());
     }
 
@@ -21,7 +21,7 @@ public class GrowingGems : MonoBehaviour
     {
         for (float f = 0f; f <= TargetHeigth; f += GrowingRate)
         {
-            newGem.transform.localScale = new Vector3(f, f, f);
+            newXtal.transform.localScale = new Vector3(f, f, f);
             yield return new WaitForSeconds(.1f);
         }
     }

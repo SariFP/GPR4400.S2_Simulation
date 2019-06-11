@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4803534157535666}
   - component: {fileID: 33616897774417072}
   - component: {fileID: 23459640599585504}
+  - component: {fileID: -7073645045139900982}
   m_Layer: 0
   m_Name: Crystal_5
   m_TagString: Untagged
@@ -53,7 +54,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -78,6 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-7073645045139900982
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775067915322916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: c66874884f8d87b469b216afdc2c8487, type: 3}
 --- !u!1001 &2708764633514537859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,6 +151,14 @@ PrefabInstance:
     - target: {fileID: 4452789172675954, guid: 9c00402af93e9f445a832a7cfc6bc453, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.032
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599314686626702, guid: 9c00402af93e9f445a832a7cfc6bc453, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192456451351126, guid: 9c00402af93e9f445a832a7cfc6bc453, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198956581991317314, guid: 9c00402af93e9f445a832a7cfc6bc453,
         type: 3}

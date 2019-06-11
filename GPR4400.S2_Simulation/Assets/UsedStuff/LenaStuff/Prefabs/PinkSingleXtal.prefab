@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6033882703342108607}
   - component: {fileID: 6033882703342108606}
   m_Layer: 0
-  m_Name: PurpleSingleGemSpawner
+  m_Name: PinkSingleXtal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9ffd7972a363b49ad3e47a4a33977b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemPrefab: {fileID: 1775067915322916, guid: 4784d35839cbb1f4886faff7eef7f993, type: 3}
-  GrowingRate: 0.008
+  XtalPrefab: {fileID: 1157683295679534, guid: 22e7f57bc6441e24abfba273b7ed4987, type: 3}
+  GrowingRate: 0.003
+  TargetHeigth: 4
