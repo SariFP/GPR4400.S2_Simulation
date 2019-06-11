@@ -145,11 +145,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.036
       objectReference: {fileID: 0}
-    - target: {fileID: 1886717179449160, guid: ecdbbd310ef9f9944bbbb7aaf319b688, type: 3}
+    - target: {fileID: 1602704591955594, guid: ecdbbd310ef9f9944bbbb7aaf319b688, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1602704591955594, guid: ecdbbd310ef9f9944bbbb7aaf319b688, type: 3}
+    - target: {fileID: 1886717179449160, guid: ecdbbd310ef9f9944bbbb7aaf319b688, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -177,6 +177,36 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198467384119029768, guid: ecdbbd310ef9f9944bbbb7aaf319b688,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.r
+      value: 0.252
+      objectReference: {fileID: 0}
+    - target: {fileID: 198467384119029768, guid: ecdbbd310ef9f9944bbbb7aaf319b688,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198467384119029768, guid: ecdbbd310ef9f9944bbbb7aaf319b688,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.g
+      value: 0.168
+      objectReference: {fileID: 0}
+    - target: {fileID: 198467384119029768, guid: ecdbbd310ef9f9944bbbb7aaf319b688,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.g
+      value: 0.5048701
+      objectReference: {fileID: 0}
+    - target: {fileID: 198467384119029768, guid: ecdbbd310ef9f9944bbbb7aaf319b688,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.r
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 198467384119029768, guid: ecdbbd310ef9f9944bbbb7aaf319b688,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.b
+      value: 0.06016379
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecdbbd310ef9f9944bbbb7aaf319b688, type: 3}

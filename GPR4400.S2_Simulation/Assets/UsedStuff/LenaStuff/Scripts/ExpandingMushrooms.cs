@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ExpandingMushrooms : MonoBehaviour
 {
-
-
     public GameObject MushroomPrefab;
     public int xMin;
     public int xMax;
