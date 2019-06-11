@@ -34,13 +34,6 @@ public class LSystem2 : MonoBehaviour
         Generate();
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetButtonDown("Jump"))
-    //    {
-    //        Generate();
-    //    }
-    //}
 
     private void Generate()
     {
