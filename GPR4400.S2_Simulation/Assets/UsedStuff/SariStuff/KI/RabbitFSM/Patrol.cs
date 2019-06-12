@@ -43,10 +43,6 @@ public class Patrol : RabbitBaseFSM
                 animator.SetBool("reachedWaypoint", true);
                 pointed = currentWaypoint;
             }
-            //else if (currentWaypoint == pointed)
-            //{
-            //    animator.SetBool("reachedWaypoint", false);
-            //}
         }
 
         var direction = wayPoints[currentWaypoint].transform.position - Rabbit.transform.position;
@@ -65,16 +61,4 @@ public class Patrol : RabbitBaseFSM
     {
 
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

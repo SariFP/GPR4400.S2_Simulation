@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RabbitEat : RabbitBaseFSM
+public class RunToFood : RabbitBaseFSM
 {
     [SerializeField]
     GameObject Food;
@@ -16,25 +16,25 @@ public class RabbitEat : RabbitBaseFSM
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //if (animator.GetBool("Food") == false)
-        //    return;
+        if (animator.GetBool("Food") == false)
+            return;
 
-        //Food = Rabbit.GetComponent<RabbitAI>().GetFood();
-        //if (animator.GetBool("Food") == true)
-        //{
-        //    var direction = Food.transform.position - Rabbit.transform.position;
+        Food = Rabbit.GetComponent<RabbitAI>().GetFood();
+        if (animator.GetBool("Food") == true)
+        {
+            var direction = Food.transform.position - Rabbit.transform.position;
 
-        //    Rabbit.transform.rotation = Quaternion.Slerp(Rabbit.transform.rotation,
-        //                                Quaternion.LookRotation(direction),
-        //                                rotSpeed * Time.deltaTime);
+            Rabbit.transform.rotation = Quaternion.Slerp(Rabbit.transform.rotation,
+                                        Quaternion.LookRotation(direction),
+                                        rotSpeed * Time.deltaTime);
 
-        //    Rabbit.transform.Translate(0, 0, Time.deltaTime * speed);
-        //}
+            Rabbit.transform.Translate(0, 0, Time.deltaTime * speed);
+        }
 
-        //if (Vector3.Distance(Rabbit.transform.position, Food.transform.position) < 0.6f)
-        //{
-        //    animator.SetBool("reachedFood", true);
-        //}
+        if (Vector3.Distance(Rabbit.transform.position, Food.transform.position) < 1.2f)
+        {
+            animator.SetBool("reachedFood", true);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
