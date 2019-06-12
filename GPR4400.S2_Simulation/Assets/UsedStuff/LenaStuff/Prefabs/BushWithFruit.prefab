@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 7368017972663640459}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: bushfruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,4 +196,4 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4292340068
-  m_Size: 0.035
+  m_Size: 0.065
