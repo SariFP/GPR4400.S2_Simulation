@@ -12,12 +12,18 @@ public class SpawnFood : MonoBehaviour
         FoodSpawnPlace = this.gameObject;
     }
 
-    private void Update()
+    public void FoodSpawn()
     {
-        if(Input.GetButtonDown("Jump"))
-        {
-            Instantiate(Food, FoodSpawnPlace.transform);
-            Food.transform.position = FoodSpawnPlace.transform.position;
-        }
+        Instantiate(Food, FoodSpawnPlace.transform);
+        Food.transform.position = FoodSpawnPlace.transform.position;
     }
+
+    //private void Update()
+    //{
+    //    if(Input.GetButtonDown("Jump"))
+    //    {
+    //        Instantiate(Food, FoodSpawnPlace.transform);
+    //        Food.transform.position = FoodSpawnPlace.transform.position;
+    //    }
+    //}
 }
