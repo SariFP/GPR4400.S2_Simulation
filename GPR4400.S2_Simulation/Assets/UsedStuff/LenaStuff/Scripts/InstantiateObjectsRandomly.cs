@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class InstantiateObjectsRandomly : MonoBehaviour
 {
-    public float AmountOfObjects = 100;
+    public float AmountOfObjects = 200; /*DENSITY*/
+    public int SubtrahendOfTotalTerrainRadius = 60; /*WIDENESS*/
     public GameObject TreePrefab;
     public GameObject PlenteousTreePrefeab;
     public GameObject BushPrefab;
@@ -24,23 +25,22 @@ public class InstantiateObjectsRandomly : MonoBehaviour
     private float TerrainWidth;
     private float TerrainLength;
     private float TerrainHeight;
+    private float deviance = 0.05f;
 
     private RaycastHit hit;
-    //private GameObject randomObject;
     private GameObject randomPrefab;
     private Quaternion randomQuat;
     private Vector3 randomPos;
     private float randomPosX;
     private float randomPosZ;
     private float randomPosY;
-    private float Height;
 
     void Start()
     {
-        TerrainXMin = Terrain.transform.position.x;
-        TerrainZMin = Terrain.transform.position.z;
-        TerrainWidth = Terrain.terrainData.size.x;
-        TerrainLength = Terrain.terrainData.size.z;
+        TerrainXMin = Terrain.transform.position.x + SubtrahendOfTotalTerrainRadius;
+        TerrainZMin = Terrain.transform.position.z + SubtrahendOfTotalTerrainRadius;
+        TerrainWidth = Terrain.terrainData.size.x - SubtrahendOfTotalTerrainRadius * 2;
+        TerrainLength = Terrain.terrainData.size.z - SubtrahendOfTotalTerrainRadius * 2;
         TerrainHeight = Terrain.terrainData.size.y;
         TerrainXMax = TerrainXMin + TerrainWidth;
         TerrainZMax = TerrainZMin + TerrainLength;
@@ -59,7 +59,7 @@ public class InstantiateObjectsRandomly : MonoBehaviour
             {
                 TerrainHeight = hit.point.y;
             }
-            randomPosY = TerrainHeight-0.05f;
+            randomPosY = TerrainHeight - deviance;
             randomPos = new Vector3(randomPosX, randomPosY, randomPosZ);
 
             int randPref = Random.Range(1, 8);
@@ -107,7 +107,8 @@ public class InstantiateObjectsRandomly : MonoBehaviour
                 randomQuat = new Quaternion(u, w, v, 1);
             }
 
-            /*randomObject =*/ Instantiate(randomPrefab, randomPos, randomQuat);
+            /*randomObject =*/
+            Instantiate(randomPrefab, randomPos, randomQuat);
             //randomObject.transform.parent = randomObject.transform;
 
             yield return new WaitForSeconds(1);

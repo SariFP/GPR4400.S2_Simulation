@@ -42,7 +42,7 @@ public class TerrainGenerator : MonoBehaviour
         if (Physics.Raycast(new Vector3(0, 100, 0), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
         {
             terrainHeight = hit.point.y;
-            Player.transform.Translate(Player.transform.position.x, terrainHeight + 2, Player.transform.position.z);
+            Player.transform.Translate(Player.transform.position.x, terrainHeight, Player.transform.position.z);
         }
     }
 

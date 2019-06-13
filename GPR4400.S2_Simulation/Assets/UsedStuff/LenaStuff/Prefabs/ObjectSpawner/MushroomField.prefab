@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2371710879455017034}
-  - component: {fileID: 2371710879455017033}
-  - component: {fileID: 2371710879455017032}
+  - component: {fileID: 6132457732495859046}
+  - component: {fileID: 1916623360544986557}
   m_Layer: 0
   m_Name: MushroomField
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2371710879455017033
+--- !u!114 &6132457732495859046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,14 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d779790256b06e4fbfb976517c8f8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountOfMushrooms: 500
   MushroomPrefab: {fileID: 4214803385756136102, guid: ae888ee5871d9d343b6d27bd202c4a45,
     type: 3}
-  xMin: 7
-  xMax: 4
-  zMin: 7
-  zMax: 4
---- !u!114 &2371710879455017032
+  AmountOfMushrooms: 500
+  xMin: 1
+  xMax: 7
+  zMin: 1
+  zMax: 7
+  TerrainLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &1916623360544986557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +66,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d779790256b06e4fbfb976517c8f8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountOfMushrooms: 500
   MushroomPrefab: {fileID: 4214803385756136102, guid: ae888ee5871d9d343b6d27bd202c4a45,
     type: 3}
+  AmountOfMushrooms: 500
   xMin: -7
   xMax: -1
-  zMin: -4
-  zMax: -7
+  zMin: -7
+  zMax: -1
+  TerrainLayer:
+    serializedVersion: 2
+    m_Bits: 256
