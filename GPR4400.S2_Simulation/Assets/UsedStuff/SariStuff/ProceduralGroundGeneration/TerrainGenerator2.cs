@@ -1,45 +1,25 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-public class TerrainGenerator : MonoBehaviour
+public class TerrainGenerator2 : MonoBehaviour
 {
-    public GameObject Player;
-    Terrain terrain;
-
-    public int depth = 5;
+    public int depth = 10;
 
     public int width = 256;
     public int height = 256;
 
-    public float scale = 5f;
-
-    private float[,] heights;
-    private float terrainHeight;
-
-    public RaycastHit hit;
-    public LayerMask terrainLayer;
+    public float scale = 10f;
 
     //Randomize offset
     public float offsetX = 100f;
     public float offsetY = 100f;
 
-    private void Awake()
+    private void Start()
     {
         offsetX = Random.Range(0f, 1000f);
         offsetY = Random.Range(0f, 1000f);
 
-        terrain = GetComponent<Terrain>();
+        Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
-        terrainHeight = terrain.terrainData.size.y;
-    }
-
-    private void Start()
-    {
-        if (Physics.Raycast(new Vector3(0, 100, 0), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
-        {
-            terrainHeight = hit.point.y;
-        }
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)
@@ -53,7 +33,7 @@ public class TerrainGenerator : MonoBehaviour
 
     float[,] GenerateHeights()
     {
-        heights = new float[width, height];
+        float[,] heights = new float[width, height];
 
         for (int x = 0; x < width; x++)
         {
