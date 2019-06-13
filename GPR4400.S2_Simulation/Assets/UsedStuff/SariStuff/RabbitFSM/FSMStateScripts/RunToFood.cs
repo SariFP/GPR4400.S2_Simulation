@@ -29,7 +29,7 @@ public class RunToFood : RabbitBaseFSM
             Rabbit.transform.Translate(0, 0, Time.deltaTime * speed);
         }
 
-        if (Vector3.Distance(Rabbit.transform.position, Food.transform.position) < 1.2f)
+        if (Vector3.Distance(Rabbit.transform.position, Food.transform.position) < 0.5f)
         {
             animator.SetBool("reachedFood", true);
         }

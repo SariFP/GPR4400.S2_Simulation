@@ -14,7 +14,6 @@ public class RabbitAI : MonoBehaviour
 
     [SerializeField]
     GameObject food;
-
     public GameObject GetFood()
     {
         return food;
@@ -55,7 +54,7 @@ public class RabbitAI : MonoBehaviour
 
     IEnumerator Eating()
     {
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSecondsRealtime(2);
         Destroy(food);
         anim.SetBool("Food", false);
         anim.SetBool("reachedFood", false);

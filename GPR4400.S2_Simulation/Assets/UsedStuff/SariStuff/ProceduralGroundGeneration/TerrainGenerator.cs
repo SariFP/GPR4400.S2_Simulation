@@ -7,7 +7,7 @@ public class TerrainGenerator : MonoBehaviour
     public GameObject Player;
     public GameObject WayPoint;
     public GameObject Rabbit;
-    public GameObject FoodSpawner;
+    //public GameObject FoodSpawner;
     Terrain terrain;
 
     public int depth = 5;
@@ -47,7 +47,7 @@ public class TerrainGenerator : MonoBehaviour
             Player.transform.Translate(Player.transform.position.x, terrainHeight, Player.transform.position.z);
             WayPoint.transform.Translate(WayPoint.transform.position.x, terrainHeight, WayPoint.transform.position.z);
             Rabbit.transform.Translate(Rabbit.transform.position.x, terrainHeight, Rabbit.transform.position.z);
-            FoodSpawner.transform.Translate(FoodSpawner.transform.position.x, terrainHeight, FoodSpawner.transform.position.z);
+            //FoodSpawner.transform.Translate(FoodSpawner.transform.position.x, terrainHeight, FoodSpawner.transform.position.z);
         }
     }
 

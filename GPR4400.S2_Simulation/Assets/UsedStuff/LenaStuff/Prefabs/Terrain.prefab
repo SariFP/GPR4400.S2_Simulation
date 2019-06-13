@@ -43,7 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ae984708bc0ac40995a2a9c04ff54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 146900, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+  Player: {fileID: 0}
+  WayPoint: {fileID: 0}
+  Rabbit: {fileID: 0}
   depth: 4
   width: 256
   height: 256
@@ -148,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AmountOfObjects: 100
+  SubtrahendOfTotalTerrainRadius: 60
   TreePrefab: {fileID: 7643013270285672990, guid: 9a33ad5c9f6f31a4e9302820fc3f67a7,
     type: 3}
   PlenteousTreePrefeab: {fileID: 7643013270285672990, guid: 730aab814c2dfad43b79300fc3b1d863,
