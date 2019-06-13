@@ -9,8 +9,8 @@ public class TerrainGenerator : MonoBehaviour
 
     public int depth = 5;
 
-    public int width = 256;
-    public int height = 256;
+    private float width;
+    private float height;
 
     public float scale = 5f;
 
@@ -32,6 +32,8 @@ public class TerrainGenerator : MonoBehaviour
         terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
         terrainHeight = terrain.terrainData.size.y;
+        width = terrain.terrainData.size.x;
+        height = terrain.terrainData.size.z;
     }
 
     private void Start()
@@ -39,13 +41,13 @@ public class TerrainGenerator : MonoBehaviour
         if (Physics.Raycast(new Vector3(0, 100, 0), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
         {
             terrainHeight = hit.point.y;
-            Player.transform.Translate(Player.transform.position.x, terrainHeight + 1, Player.transform.position.z);
+            Player.transform.Translate(Player.transform.position.x, terrainHeight, Player.transform.position.z);
         }
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)
     {
-        terrainData.heightmapResolution = width + 1;
+        terrainData.heightmapResolution = (int)width + 1;
         terrainData.size = new Vector3(width, depth, height);
         terrainData.SetHeights(0, 0, GenerateHeights());
 
@@ -54,7 +56,7 @@ public class TerrainGenerator : MonoBehaviour
 
     float[,] GenerateHeights()
     {
-        heights = new float[width, height];
+        heights = new float[(int)width, (int)height];
 
         for (int x = 0; x < width; x++)
         {
