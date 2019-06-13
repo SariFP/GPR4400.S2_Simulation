@@ -8,6 +8,11 @@ public class SimulationManager : MonoBehaviour
 
     public static SimulationManager Instance { get { return instance; } }
 
+    public GameObject SliderWideness;
+    public GameObject SliderDensity;
+    public GameObject SliderEmission;
+    public GameObject SliderCelerity;
+    public GameObject SliderBumpiness;
 
     private void Awake()
     {
@@ -20,6 +25,19 @@ public class SimulationManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        if (true)
+        {
+
         }
     }
 }
