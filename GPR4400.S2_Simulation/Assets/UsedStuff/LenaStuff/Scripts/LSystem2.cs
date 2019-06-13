@@ -15,7 +15,7 @@ public class LSystem2 : MonoBehaviour
     public float Variance = 120f;
 
     public GameObject Tree;
-    public GameObject TreeParent;
+   
     public GameObject Branch;
     public GameObject BranchWithFruit;
 
@@ -37,7 +37,8 @@ public class LSystem2 : MonoBehaviour
 
     private void Generate()
     {
-        Tree = Instantiate(TreeParent);
+        Tree = Instantiate(Tree);
+        //Tree.transform.Rotate(0, Random.Range(0, 360), 0);
 
         currentString = axiom;
 

@@ -49,8 +49,7 @@ MonoBehaviour:
   Width: 1
   Angle: 30
   Variance: 120
-  Tree: {fileID: 7643013270629971821}
-  TreeParent: {fileID: 7643013270629971821}
+  Tree: {fileID: 4390692830271351190, guid: adbeaf8a6fde34e40856c54330ff15d2, type: 3}
   Branch: {fileID: 4108171823193562729, guid: 02fb440d0123fa845833d5f7162dc581, type: 3}
   BranchWithFruit: {fileID: 438828298248539899, guid: a8a75ebed672dfe499aca0d2d73273f0,
     type: 3}
