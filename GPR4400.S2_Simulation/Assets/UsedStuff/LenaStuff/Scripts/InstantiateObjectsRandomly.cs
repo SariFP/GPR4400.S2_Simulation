@@ -33,15 +33,14 @@ public class InstantiateObjectsRandomly : MonoBehaviour
     private float randomPosX;
     private float randomPosZ;
     private float randomPosY;
-    private float terrainHeight;
-
+    private float Height;
 
     void Start()
     {
-        TerrainXMin = Terrain.transform.position.x+15;
-        TerrainZMin = Terrain.transform.position.z+15;
-        TerrainWidth = Terrain.terrainData.size.x-30;
-        TerrainLength = Terrain.terrainData.size.z-30;
+        TerrainXMin = Terrain.transform.position.x;
+        TerrainZMin = Terrain.transform.position.z;
+        TerrainWidth = Terrain.terrainData.size.x;
+        TerrainLength = Terrain.terrainData.size.z;
         TerrainHeight = Terrain.terrainData.size.y;
         TerrainXMax = TerrainXMin + TerrainWidth;
         TerrainZMax = TerrainZMin + TerrainLength;
@@ -58,9 +57,9 @@ public class InstantiateObjectsRandomly : MonoBehaviour
             randomPosZ = Random.Range(TerrainZMin, TerrainZMax);
             if (Physics.Raycast(new Vector3(randomPosX, 100, randomPosZ), Vector3.down, out hit, Mathf.Infinity, TerrainLayer))
             {
-                terrainHeight = hit.point.y;
+                TerrainHeight = hit.point.y;
             }
-            randomPosY = terrainHeight-0.05f;
+            randomPosY = TerrainHeight-0.05f;
             randomPos = new Vector3(randomPosX, randomPosY, randomPosZ);
 
             int randPref = Random.Range(1, 8);
