@@ -37,7 +37,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3711703372868819792}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -60931639895558703}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -103,6 +104,24 @@ AnimatorStateTransition:
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!114 &-2475941083829370669
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d3bd83206a873408ee36c2fbf8b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rabbit: {fileID: 0}
+  opponent: {fileID: 0}
+  speed: 2
+  rotSpeed: 1
+  accuracy: 3
+  Food: {fileID: 0}
+--- !u!114 &-60931639895558703
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
