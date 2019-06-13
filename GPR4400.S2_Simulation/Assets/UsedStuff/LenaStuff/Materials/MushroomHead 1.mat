@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MushroomHead
+  m_Name: MushroomHead 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -61,9 +61,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.79
+    - _Glossiness: 0.84
     - _GlossyReflections: 1
-    - _Metallic: 1
+    - _Metallic: 0.61
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -73,5 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9811321, g: 0.950389, b: 0.5507298, a: 1}
-    - _EmissionColor: {r: 4.9623823, g: 6.582049, b: 0.24122691, a: 1}
+    - _Color: {r: 0.96607274, g: 0.9811321, b: 0.032395888, a: 1}
+    - _EmissionColor: {r: 1.4901961, g: 1.7882353, b: 0.29803923, a: 1}
