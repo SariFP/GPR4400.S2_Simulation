@@ -5,12 +5,12 @@ using System.Collections.Generic;
 public class TerrainGenerator : MonoBehaviour
 {
     public GameObject Player;
-    Terrain terrain;
+    private Terrain terrain;
 
     public int depth = 5;
 
-    private float width;
-    private float height;
+    public float width = 256;
+    public float height = 256;
 
     public float scale = 5f;
 
@@ -21,19 +21,19 @@ public class TerrainGenerator : MonoBehaviour
     public LayerMask terrainLayer;
 
     //Randomize offset
-    public float offsetX = 100f;
-    public float offsetY = 100f;
+    public float offsetX;
+    public float offsetY;
 
     private void Awake()
     {
         offsetX = Random.Range(0f, 1000f);
         offsetY = Random.Range(0f, 1000f);
 
-        terrain = GetComponent<Terrain>();
+        terrain = GetComponentInParent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
         terrainHeight = terrain.terrainData.size.y;
-        width = terrain.terrainData.size.x;
-        height = terrain.terrainData.size.z;
+        //width = terrain.terrainData.size.x;
+        //height = terrain.terrainData.size.z;
     }
 
     private void Start()

@@ -38,10 +38,10 @@ public class InstantiateObjectsRandomly : MonoBehaviour
 
     void Start()
     {
-        TerrainXMin = Terrain.transform.position.x;
-        TerrainZMin = Terrain.transform.position.z;
-        TerrainWidth = Terrain.terrainData.size.x;
-        TerrainLength = Terrain.terrainData.size.z;
+        TerrainXMin = Terrain.transform.position.x+15;
+        TerrainZMin = Terrain.transform.position.z+15;
+        TerrainWidth = Terrain.terrainData.size.x-30;
+        TerrainLength = Terrain.terrainData.size.z-30;
         TerrainHeight = Terrain.terrainData.size.y;
         TerrainXMax = TerrainXMin + TerrainWidth;
         TerrainZMax = TerrainZMin + TerrainLength;
