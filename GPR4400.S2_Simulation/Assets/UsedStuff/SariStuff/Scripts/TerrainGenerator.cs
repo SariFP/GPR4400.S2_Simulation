@@ -6,6 +6,8 @@ public class TerrainGenerator : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Rabbit;
+    public GameObject Fireflies;
+    public GameObject FogParticle;
     public GameObject[] Waypoint;
     Terrain terrain;
 
@@ -18,7 +20,7 @@ public class TerrainGenerator : MonoBehaviour
     public int height = 256;
 
     //BUMPINESSWERTE:
-    private int depth = (int)SimulationManager.Instance.Bumpiness; 
+    private int depth = (int)SimulationManager.Instance.Bumpiness;
     private float scale = SimulationManager.Instance.Bumpiness;
 
     //Randomize offset
@@ -41,19 +43,29 @@ public class TerrainGenerator : MonoBehaviour
 
     private void Start()
     {
-        foreach (GameObject item in Waypoint)
+        for (int i = 0; i < Waypoint.Length; i++)
         {
-            if (Physics.Raycast(new Vector3(0, 100, 0), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
+            if (Physics.Raycast(new Vector3(Waypoint[i].transform.position.x, 100, Waypoint[i].transform.position.z), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
             {
                 terrainHeight = hit.point.y;
-                item.transform.Translate(item.transform.position.x, terrainHeight, item.transform.position.z);
+                Waypoint[i].transform.position = new Vector3(Waypoint[i].transform.position.x, terrainHeight, Waypoint[i].transform.position.z);
             }
         }
-        if (Physics.Raycast(new Vector3(0, 100, 0), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
+        if (Physics.Raycast(new Vector3(Player.transform.position.x, 100, Player.transform.position.z), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
         {
             terrainHeight = hit.point.y;
-            Player.transform.Translate(Player.transform.position.x, terrainHeight, Player.transform.position.z);
-            Rabbit.transform.Translate(Rabbit.transform.position.x, terrainHeight, Rabbit.transform.position.z);            
+            Player.transform.position = new Vector3(Player.transform.position.x, terrainHeight, Player.transform.position.z);
+            Fireflies.transform.position = new Vector3(Fireflies.transform.position.x, terrainHeight, Fireflies.transform.position.z);
+            FogParticle.transform.position = new Vector3(FogParticle.transform.position.x, terrainHeight, FogParticle.transform.position.z);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Physics.Raycast(new Vector3(Rabbit.transform.position.x, 100, Rabbit.transform.position.z), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
+        {
+            terrainHeight = hit.point.y;
+            Rabbit.transform.position = new Vector3(Rabbit.transform.position.x, terrainHeight, Rabbit.transform.position.z);
         }
     }
 
