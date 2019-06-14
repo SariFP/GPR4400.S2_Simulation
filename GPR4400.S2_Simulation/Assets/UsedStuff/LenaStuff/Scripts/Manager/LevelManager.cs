@@ -6,16 +6,20 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    private float delay = 5f;
     public Image Black;
-
-    private void Start()
+    public Material StartHighlightedMat;
+    private float delay = 5f;
+    private MeshRenderer meshRend;
+    
+private void Start()
     {
         Black.canvasRenderer.SetAlpha(0.0f);
+        meshRend = GetComponent<MeshRenderer>();
     }
 
     private void OnMouseEnter()
-    {    
+    {
+        meshRend.material = StartHighlightedMat;
         StartCoroutine(ChangeScene());
     }
 
@@ -23,6 +27,7 @@ public class LevelManager : MonoBehaviour
     {
         if (coll.gameObject.tag == "controller")
         {
+            meshRend.material = StartHighlightedMat;
             StartCoroutine(ChangeScene());
         }
     }
@@ -31,6 +36,7 @@ public class LevelManager : MonoBehaviour
     {
         if (other.gameObject.tag == "controller")
         {
+            meshRend.material = StartHighlightedMat;
             StartCoroutine(ChangeScene());
         }
     }
