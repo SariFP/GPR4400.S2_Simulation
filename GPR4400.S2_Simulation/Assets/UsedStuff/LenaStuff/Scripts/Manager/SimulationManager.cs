@@ -59,4 +59,6 @@ public class SimulationManager : MonoBehaviour
         Celerity = SliderCelerity.value;
         Bumpiness = SliderBumpiness.value;
     }
+
+
 }

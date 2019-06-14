@@ -19,6 +19,23 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(ChangeScene());
     }
 
+    private void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.tag == "controller")
+        {
+            StartCoroutine(ChangeScene());
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "controller")
+        {
+            StartCoroutine(ChangeScene());
+        }
+    }
+
+
     IEnumerator ChangeScene()
     {
         Black.CrossFadeAlpha(1, delay, false);
