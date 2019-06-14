@@ -14,8 +14,7 @@ public class LSystem2 : MonoBehaviour
     public float Angle = 30f;
     public float Variance = 120f;
 
-    public GameObject Tree;
-   
+    public GameObject Tree;   
     public GameObject Branch;
     public GameObject BranchWithFruit;
 

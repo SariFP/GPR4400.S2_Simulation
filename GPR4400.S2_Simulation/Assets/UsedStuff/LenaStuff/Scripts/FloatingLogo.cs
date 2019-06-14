@@ -9,14 +9,12 @@ public class FloatingLogo : MonoBehaviour
     public float yMax=1.2f;
     private bool goingDown;
 
-    // Start is called before the first frame update
     void Start()
     {
         goingDown = true;
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         Timer -= Time.deltaTime;

@@ -40,13 +40,10 @@ public class InstantiateObjectsRandomly : MonoBehaviour
     void Start()
     {
         minusOfTotalTerrainRadius = SimulationManager.Instance.Wideness;
-        Debug.Log("SofTTR: " + minusOfTotalTerrainRadius + " - " + SimulationManager.Instance.Wideness);
 
         amountOfObjects = SimulationManager.Instance.Density;
-        Debug.Log("AofO: " + amountOfObjects + " - " + SimulationManager.Instance.Density);
 
         speedOfEvolution = SimulationManager.Instance.Celerity;
-        Debug.Log("SofE: " + speedOfEvolution + " - " + SimulationManager.Instance.Celerity);
 
         TerrainXMin = Terrain.transform.position.x + minusOfTotalTerrainRadius;
         TerrainZMin = Terrain.transform.position.z + minusOfTotalTerrainRadius;
@@ -118,9 +115,7 @@ public class InstantiateObjectsRandomly : MonoBehaviour
                 randomQuat = new Quaternion(u, w, v, 1);
             }
 
-            /*randomObject =*/
             Instantiate(randomPrefab, randomPos, randomQuat);
-            //randomObject.transform.parent = randomObject.transform;
 
             yield return new WaitForSeconds(1.5f / speedOfEvolution);
         }
