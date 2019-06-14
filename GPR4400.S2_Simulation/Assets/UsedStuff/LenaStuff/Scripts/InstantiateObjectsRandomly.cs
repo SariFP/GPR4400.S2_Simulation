@@ -40,10 +40,13 @@ public class InstantiateObjectsRandomly : MonoBehaviour
     void Start()
     {
         minusOfTotalTerrainRadius = SimulationManager.Instance.Wideness;
+        Debug.Log("SofTTR: " + minusOfTotalTerrainRadius + " - " + SimulationManager.Instance.Wideness);
+
         amountOfObjects = SimulationManager.Instance.Density;
+        Debug.Log("AofO: " + amountOfObjects + " - " + SimulationManager.Instance.Density);
 
         speedOfEvolution = SimulationManager.Instance.Celerity;
-
+        Debug.Log("SofE: " + speedOfEvolution + " - " + SimulationManager.Instance.Celerity);
 
         TerrainXMin = Terrain.transform.position.x + minusOfTotalTerrainRadius;
         TerrainZMin = Terrain.transform.position.z + minusOfTotalTerrainRadius;

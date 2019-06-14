@@ -18,7 +18,7 @@ public class SimulationManager : MonoBehaviour
     public float Wideness = 63.5f;
     public float Density = 250;
     public float Emission = 0.5f;
-    public float Celerity = 1.55f;
+    public float Celerity = 2.1f;
     public float Bumpiness = 0.5f;
 
 
@@ -41,7 +41,7 @@ public class SimulationManager : MonoBehaviour
         Wideness = 63.5f;
         Density = 250f;
         Emission = 0.5f;
-        Celerity = 1.55f;
+        Celerity = 2.1f;
         Bumpiness = 0.5f;
 
         SliderWideness.value = Wideness;
