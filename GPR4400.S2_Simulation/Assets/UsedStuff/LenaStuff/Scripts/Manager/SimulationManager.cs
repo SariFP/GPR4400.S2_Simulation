@@ -17,9 +17,9 @@ public class SimulationManager : MonoBehaviour
 
     public float Wideness = 63.5f;
     public float Density = 250;
-    public float Emission = 0.5f;
+    public float Emission = 5f;
     public float Celerity = 2.1f;
-    public float Bumpiness = 0.5f;
+    public float Bumpiness = 5f;
 
 
     private void Awake()
@@ -40,9 +40,9 @@ public class SimulationManager : MonoBehaviour
     {
         Wideness = 63.5f;
         Density = 250f;
-        Emission = 0.5f;
+        Emission = 5f;
         Celerity = 2.1f;
-        Bumpiness = 0.5f;
+        Bumpiness = 5f;
 
         SliderWideness.value = Wideness;
         SliderDensity.value = Density;

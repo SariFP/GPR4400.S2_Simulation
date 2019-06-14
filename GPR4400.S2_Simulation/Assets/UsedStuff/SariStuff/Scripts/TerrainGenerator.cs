@@ -6,7 +6,6 @@ public class TerrainGenerator : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Rabbit;
-    public GameObject ParticleSystems;
     public GameObject[] Waypoint;
     Terrain terrain;
 
@@ -14,10 +13,13 @@ public class TerrainGenerator : MonoBehaviour
     public RaycastHit hit;
     public LayerMask terrainLayer;
 
-    public int depth = 5;
+
     public int width = 256;
     public int height = 256;
-    public float scale = 5f;
+
+    //BUMPINESSWERTE:
+    private int depth = (int)SimulationManager.Instance.Bumpiness; 
+    private float scale = SimulationManager.Instance.Bumpiness;
 
     //Randomize offset
     [SerializeField]
@@ -51,8 +53,7 @@ public class TerrainGenerator : MonoBehaviour
         {
             terrainHeight = hit.point.y;
             Player.transform.Translate(Player.transform.position.x, terrainHeight, Player.transform.position.z);
-            Rabbit.transform.Translate(Rabbit.transform.position.x, terrainHeight, Rabbit.transform.position.z);
-            ParticleSystems.transform.Translate(ParticleSystems.transform.position.x, terrainHeight, ParticleSystems.transform.position.z);
+            Rabbit.transform.Translate(Rabbit.transform.position.x, terrainHeight, Rabbit.transform.position.z);            
         }
     }
 

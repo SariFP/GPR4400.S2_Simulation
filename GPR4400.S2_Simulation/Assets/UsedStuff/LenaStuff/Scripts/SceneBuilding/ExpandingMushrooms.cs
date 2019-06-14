@@ -14,6 +14,7 @@ public class ExpandingMushrooms : MonoBehaviour
     public LayerMask TerrainLayer;
 
     private RaycastHit hit;
+    private float terrainY;
     private float x;
     private float z;
     private float y;
@@ -25,8 +26,9 @@ public class ExpandingMushrooms : MonoBehaviour
         z = Random.Range(zMin, zMax);
         if (Physics.Raycast(new Vector3(x, 100, z), Vector3.down, out hit, Mathf.Infinity, TerrainLayer))
         {
-            y = hit.point.y;
+            terrainY = hit.point.y;
         }
+        y = terrainY;
         hikingPoint = new Vector3(x, y, z);
         StartCoroutine(SentHikingPoint());
     }
@@ -58,7 +60,7 @@ public class ExpandingMushrooms : MonoBehaviour
                 Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
             }
 
-           yield return new WaitForSeconds(0.75f / SimulationManager.Instance.Celerity);
+            yield return new WaitForSeconds(0.75f / SimulationManager.Instance.Celerity);
         }
     }
 }
