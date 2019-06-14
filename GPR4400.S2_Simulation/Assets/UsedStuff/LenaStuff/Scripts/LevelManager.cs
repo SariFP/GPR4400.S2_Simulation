@@ -15,8 +15,7 @@ public class LevelManager : MonoBehaviour
     }
 
     private void OnMouseEnter()
-    {
-        Debug.Log("Trigger");        
+    {    
         StartCoroutine(ChangeScene());
     }
 
