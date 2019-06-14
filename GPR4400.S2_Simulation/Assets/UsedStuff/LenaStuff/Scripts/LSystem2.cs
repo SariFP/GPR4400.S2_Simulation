@@ -38,7 +38,6 @@ public class LSystem2 : MonoBehaviour
     private void Generate()
     {
         Tree = Instantiate(Tree);
-        //Tree.transform.Rotate(0, Random.Range(0, 360), 0);
 
         currentString = axiom;
 
@@ -112,7 +111,7 @@ public class LSystem2 : MonoBehaviour
                 default:
                     break;
             }
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.15f / SimulationManager.Instance.Celerity);
         }
     }
 

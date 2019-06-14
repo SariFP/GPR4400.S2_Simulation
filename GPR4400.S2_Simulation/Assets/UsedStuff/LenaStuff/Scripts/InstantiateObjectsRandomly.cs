@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class InstantiateObjectsRandomly : MonoBehaviour
 {
-    public float AmountOfObjects = 200; /*DENSITY*/
-    public int SubtrahendOfTotalTerrainRadius = 60; /*WIDENESS*/
     public GameObject TreePrefab;
     public GameObject PlenteousTreePrefeab;
     public GameObject BushPrefab;
@@ -17,6 +15,10 @@ public class InstantiateObjectsRandomly : MonoBehaviour
 
     public Terrain Terrain;
     public LayerMask TerrainLayer;
+
+    private float minusOfTotalTerrainRadius; /*WIDENESS*/
+    private float amountOfObjects; /*DENSITY*/
+    private float speedOfEvolution; /*CELERITY*/
 
     private float TerrainXMin;
     private float TerrainXMax;
@@ -37,10 +39,16 @@ public class InstantiateObjectsRandomly : MonoBehaviour
 
     void Start()
     {
-        TerrainXMin = Terrain.transform.position.x + SubtrahendOfTotalTerrainRadius;
-        TerrainZMin = Terrain.transform.position.z + SubtrahendOfTotalTerrainRadius;
-        TerrainWidth = Terrain.terrainData.size.x - SubtrahendOfTotalTerrainRadius * 2;
-        TerrainLength = Terrain.terrainData.size.z - SubtrahendOfTotalTerrainRadius * 2;
+        minusOfTotalTerrainRadius = SimulationManager.Instance.Wideness;
+        amountOfObjects = SimulationManager.Instance.Density;
+
+        speedOfEvolution = SimulationManager.Instance.Celerity;
+
+
+        TerrainXMin = Terrain.transform.position.x + minusOfTotalTerrainRadius;
+        TerrainZMin = Terrain.transform.position.z + minusOfTotalTerrainRadius;
+        TerrainWidth = Terrain.terrainData.size.x - minusOfTotalTerrainRadius * 2;
+        TerrainLength = Terrain.terrainData.size.z - minusOfTotalTerrainRadius * 2;
         TerrainHeight = Terrain.terrainData.size.y;
         TerrainXMax = TerrainXMin + TerrainWidth;
         TerrainZMax = TerrainZMin + TerrainLength;
@@ -51,7 +59,7 @@ public class InstantiateObjectsRandomly : MonoBehaviour
 
     IEnumerator FindRandomPositions()
     {
-        for (int i = 0; i < AmountOfObjects; i++)
+        for (int i = 0; i < amountOfObjects; i++)
         {
             randomPosX = Random.Range(TerrainXMin, TerrainXMax);
             randomPosZ = Random.Range(TerrainZMin, TerrainZMax);
@@ -111,7 +119,7 @@ public class InstantiateObjectsRandomly : MonoBehaviour
             Instantiate(randomPrefab, randomPos, randomQuat);
             //randomObject.transform.parent = randomObject.transform;
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.5f / speedOfEvolution);
         }
     }
 }

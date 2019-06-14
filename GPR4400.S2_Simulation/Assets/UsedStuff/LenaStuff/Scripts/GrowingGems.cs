@@ -22,7 +22,7 @@ public class GrowingGems : MonoBehaviour
         for (float f = 0f; f <= TargetHeigth; f += GrowingRate)
         {
             newXtal.transform.localScale = new Vector3(f, f, f);
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.15f / SimulationManager.Instance.Celerity);
         }
     }
 }
