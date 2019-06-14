@@ -11,7 +11,9 @@ public class RunAway : RabbitBaseFSM
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        var direction = opponent.transform.position + Rabbit.transform.position;
+        var xDirection = opponent.transform.position.x + Rabbit.transform.position.x;
+        var zDirection = opponent.transform.position.z + Rabbit.transform.position.z;
+        var direction = new Vector3(xDirection, 0, zDirection);
 
         Rabbit.transform.rotation = Quaternion.Slerp(Rabbit.transform.rotation, Quaternion.LookRotation(direction),
                                     rotSpeed * Time.deltaTime);

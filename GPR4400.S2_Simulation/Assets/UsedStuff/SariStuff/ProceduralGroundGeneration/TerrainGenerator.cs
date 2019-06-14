@@ -5,23 +5,18 @@ using System.Collections.Generic;
 public class TerrainGenerator : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject WayPoint;
+    public GameObject[] Waypoint;
     public GameObject Rabbit;
-    //public GameObject FoodSpawner;
     Terrain terrain;
 
-    public int depth = 5;
-
-    public int width = 256;
-    public int height = 256;
-
-    public float scale = 5f;
-
-    private float[,] heights;
     private float terrainHeight;
-
     public RaycastHit hit;
     public LayerMask terrainLayer;
+
+    public int depth = 5;
+    public int width = 256;
+    public int height = 256;
+    public float scale = 5f;
 
     //Randomize offset
     [SerializeField]
@@ -31,6 +26,8 @@ public class TerrainGenerator : MonoBehaviour
 
     private void Awake()
     {
+        Waypoint = GameObject.FindGameObjectsWithTag("waypoint");
+
         offsetX = Random.Range(0f, 1000f);
         offsetY = Random.Range(0f, 1000f);
 
@@ -41,13 +38,19 @@ public class TerrainGenerator : MonoBehaviour
 
     private void Start()
     {
+        foreach (GameObject item in Waypoint)
+        {
+            if (Physics.Raycast(new Vector3(0, 100, 0), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
+            {
+                terrainHeight = hit.point.y;
+                item.transform.Translate(item.transform.position.x, terrainHeight, item.transform.position.z);
+            }
+        }
         if (Physics.Raycast(new Vector3(0, 100, 0), Vector3.down, out hit, Mathf.Infinity, terrainLayer))
         {
             terrainHeight = hit.point.y;
             Player.transform.Translate(Player.transform.position.x, terrainHeight, Player.transform.position.z);
-            WayPoint.transform.Translate(WayPoint.transform.position.x, terrainHeight, WayPoint.transform.position.z);
             Rabbit.transform.Translate(Rabbit.transform.position.x, terrainHeight, Rabbit.transform.position.z);
-            //FoodSpawner.transform.Translate(FoodSpawner.transform.position.x, terrainHeight, FoodSpawner.transform.position.z);
         }
     }
 
@@ -62,7 +65,7 @@ public class TerrainGenerator : MonoBehaviour
 
     float[,] GenerateHeights()
     {
-        heights = new float[(int)width, (int)height];
+        float[,] heights = new float[(int)width, (int)height];
 
         for (int x = 0; x < width; x++)
         {

@@ -20,7 +20,9 @@ public class RunToFood : RabbitBaseFSM
         Food = Rabbit.GetComponent<RabbitAI>().GetFood();
         if (animator.GetBool("Food") == true)
         {
-            var direction = Food.transform.position - Rabbit.transform.position;
+            var xDirection = opponent.transform.position.x - Rabbit.transform.position.x;
+            var zDirection = opponent.transform.position.z - Rabbit.transform.position.z;
+            var direction = new Vector3(xDirection, 0, zDirection);
 
             Rabbit.transform.rotation = Quaternion.Slerp(Rabbit.transform.rotation,
                                         Quaternion.LookRotation(direction),
@@ -34,7 +36,7 @@ public class RunToFood : RabbitBaseFSM
             animator.SetBool("reachedFood", true);
         }
     }
-    
+
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
