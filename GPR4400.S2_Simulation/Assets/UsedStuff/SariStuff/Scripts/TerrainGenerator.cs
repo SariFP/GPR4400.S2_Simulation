@@ -5,8 +5,9 @@ using System.Collections.Generic;
 public class TerrainGenerator : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject[] Waypoint;
     public GameObject Rabbit;
+    public GameObject ParticleSystems;
+    public GameObject[] Waypoint;
     Terrain terrain;
 
     private float terrainHeight;
@@ -51,6 +52,7 @@ public class TerrainGenerator : MonoBehaviour
             terrainHeight = hit.point.y;
             Player.transform.Translate(Player.transform.position.x, terrainHeight, Player.transform.position.z);
             Rabbit.transform.Translate(Rabbit.transform.position.x, terrainHeight, Rabbit.transform.position.z);
+            ParticleSystems.transform.Translate(ParticleSystems.transform.position.x, terrainHeight, ParticleSystems.transform.position.z);
         }
     }
 
