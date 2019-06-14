@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class MoveSlider : MonoBehaviour
 {
     public Slider Slider;
+    public int sign = 1;
     private float ShiftUnit;
 
     private void Start()
     {
-        ShiftUnit = Slider.maxValue / 20;
+        ShiftUnit = Slider.maxValue / 50;
     }
 
     private void OnCollisionEnter(Collision coll)
@@ -19,11 +20,11 @@ public class MoveSlider : MonoBehaviour
         {
             if (coll.gameObject.transform.position.x < transform.position.x)
             {
-                Slider.value += ShiftUnit;
+                Slider.value += ShiftUnit * sign;
             }
             if (coll.gameObject.transform.position.x > transform.position.x)
             {
-                Slider.value -= ShiftUnit;
+                Slider.value -= ShiftUnit * sign;
             }
         }
     }
@@ -34,11 +35,11 @@ public class MoveSlider : MonoBehaviour
         {
             if (other.gameObject.transform.position.x < transform.position.x)
             {
-                Slider.value += ShiftUnit;
+                Slider.value += ShiftUnit * sign;
             }
             if (other.gameObject.transform.position.x > transform.position.x)
             {
-                Slider.value -= ShiftUnit;
+                Slider.value -= ShiftUnit * sign;
             }
         }
     }
