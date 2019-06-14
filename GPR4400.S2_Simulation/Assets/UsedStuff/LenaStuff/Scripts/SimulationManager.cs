@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SimulationManager : MonoBehaviour
 {
@@ -8,11 +9,18 @@ public class SimulationManager : MonoBehaviour
 
     public static SimulationManager Instance { get { return instance; } }
 
-    public GameObject SliderWideness;
-    public GameObject SliderDensity;
-    public GameObject SliderEmission;
-    public GameObject SliderCelerity;
-    public GameObject SliderBumpiness;
+    public Slider SliderWideness;
+    public Slider SliderDensity;
+    public Slider SliderEmission;
+    public Slider SliderCelerity;
+    public Slider SliderBumpiness;
+
+    public float Wideness = 0.5f;
+    public float Density = 0.5f;
+    public float Emission = 0.5f;
+    public float Celerity = 0.5f;
+    public float Bumpiness = 0.5f;
+
 
     private void Awake()
     {
@@ -30,14 +38,25 @@ public class SimulationManager : MonoBehaviour
 
     private void Start()
     {
-        
+        Wideness = 0.5f;
+        Density = 0.5f;
+        Emission = 0.5f;
+        Celerity = 0.5f;
+        Bumpiness = 0.5f;
+
+        SliderWideness.value = Wideness;
+        SliderDensity.value = Density;
+        SliderEmission.value = Emission;
+        SliderCelerity.value = Celerity;
+        SliderBumpiness.value = Bumpiness;
     }
 
     private void Update()
     {
-        if (true)
-        {
-
-        }
+        Wideness = SliderWideness.value;
+        Density = SliderDensity.value;
+        Emission = SliderEmission.value;
+        Celerity = SliderCelerity.value;
+        Bumpiness = SliderBumpiness.value;
     }
 }

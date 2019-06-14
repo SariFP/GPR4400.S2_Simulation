@@ -58,7 +58,7 @@ public class ExpandingMushrooms : MonoBehaviour
                 Instantiate(MushroomPrefab, hikingPoint, Quaternion.identity);
             }
 
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
 }
