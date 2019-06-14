@@ -24,17 +24,13 @@ public class ExpandingMushrooms : MonoBehaviour
     {
         x = Random.Range(xMin, xMax);
         z = Random.Range(zMin, zMax);
-        StartCoroutine(SentHikingPoint());
-    }
-
-    private void FixedUpdate()
-    {
-        if (Physics.Raycast(new Vector3(hikingPoint.x, 100, hikingPoint.z), Vector3.down, out hit, Mathf.Infinity, TerrainLayer))
+        if (Physics.Raycast(new Vector3(x, 100, z), Vector3.down, out hit, Mathf.Infinity, TerrainLayer))
         {
             terrainY = hit.point.y;
         }
         y = terrainY;
-        hikingPoint = new Vector3(hikingPoint.x, y, hikingPoint.z);
+        hikingPoint = new Vector3(x, y, z);
+        StartCoroutine(SentHikingPoint());
     }
 
     IEnumerator SentHikingPoint()
