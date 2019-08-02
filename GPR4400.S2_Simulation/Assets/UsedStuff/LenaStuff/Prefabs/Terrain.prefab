@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 507233400}
-  - component: {fileID: 507233401}
+  - component: {fileID: 217061257}
   m_Layer: 0
   m_Name: HeightMap
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 6731832778751010108}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &507233401
+--- !u!114 &217061257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,19 +40,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 507233399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39ae984708bc0ac40995a2a9c04ff54f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f8a82e7b9e3f1445af318650cc014f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   Rabbit: {fileID: 0}
+  Fireflies: {fileID: 0}
+  FogParticle: {fileID: 0}
   Waypoint: []
   terrainLayer:
     serializedVersion: 2
     m_Bits: 256
-  width: 256
-  height: 256
-  offsetX: 100
-  offsetY: 100
 --- !u!1 &6731832778751010097
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +63,8 @@ GameObject:
   - component: {fileID: 6731832778751010099}
   - component: {fileID: 6731832778751010098}
   - component: {fileID: 6731832778751010109}
+  - component: {fileID: 217061265}
+  - component: {fileID: 217061259}
   m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
@@ -163,7 +163,66 @@ MonoBehaviour:
     type: 3}
   YellowGroupXtalPrefab: {fileID: 6033882703342108605, guid: 90465e09434f9b545a7276abebf7c1cf,
     type: 3}
-  Terrain: {fileID: 6731832778751010099}
   TerrainLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!23 &217061265
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731832778751010097}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &217061259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731832778751010097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e5ad610ef844d47a3c1839345e47cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Depth: 10
+  Scale: 20
+  middleDepthScale: 30
+  Kx: 70
+  Ky: 70
+  offsetX: 200
+  offsetY: 200
+  TerrainLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  TeleportTerrain: {fileID: 0}
