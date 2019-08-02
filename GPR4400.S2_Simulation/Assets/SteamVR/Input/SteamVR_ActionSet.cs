@@ -11,7 +11,8 @@ using System.Text;
 namespace Valve.VR
 {
     /// <summary>
-    /// Action sets are logical groupings of actions. Multiple sets can be active at one time.
+    /// Action sets are logical groupings of actions. Multip
+    /// le sets can be active at one time.
     /// </summary>
     [Serializable]
     public class SteamVR_ActionSet : IEquatable<SteamVR_ActionSet>, ISteamVR_ActionSet, ISerializationCallbackReceiver

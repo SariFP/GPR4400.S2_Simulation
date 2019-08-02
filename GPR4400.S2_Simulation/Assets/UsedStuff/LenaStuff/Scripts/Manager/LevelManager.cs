@@ -6,12 +6,30 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    private static LevelManager instance;
+
+    public static LevelManager Instance { get { return instance; } }
+    public bool isChangingScene;
     public Image Black;
     public Material StartHighlightedMat;
-    private float delay = 5f;
+    public float delay = 5f;
     private MeshRenderer meshRend;
-    
-private void Start()
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+
+    private void Start()
     {
         Black.canvasRenderer.SetAlpha(0.0f);
         meshRend = GetComponent<MeshRenderer>();
@@ -41,11 +59,12 @@ private void Start()
         }
     }
 
-
     IEnumerator ChangeScene()
     {
+        isChangingScene = true;
         Black.CrossFadeAlpha(1, delay, false);
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("SimulScene");
+        PlayerManager.Instance.CheckY();
     }
 }

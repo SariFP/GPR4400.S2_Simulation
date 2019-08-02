@@ -15,11 +15,15 @@ public class SimulationManager : MonoBehaviour
     public Slider SliderCelerity;
     public Slider SliderBumpiness;
 
-    public float Wideness = 63.5f;
+    public float Wideness = 60f;
     public float Density = 250;
-    public float Emission = 5f;
+    public float Emission = 5;
     public float Celerity = 2.1f;
-    public float Bumpiness = 5f;
+    public float Bumpiness = 30f;
+
+    public bool TerrainGenerated;
+    public float Ground;
+    public float WaterLimit;
 
 
     private void Awake()
@@ -38,15 +42,15 @@ public class SimulationManager : MonoBehaviour
 
     private void Start()
     {
-        Wideness = 63.5f;
+        Wideness = 60f;
         Density = 250f;
-        Emission = 5f;
+        Emission = 5;
         Celerity = 2.1f;
-        Bumpiness = 5f;
+        Bumpiness = 30f;
 
         SliderWideness.value = Wideness;
         SliderDensity.value = Density;
-        SliderEmission.value = Emission;
+        SliderEmission.value = /*(int)*/Emission;
         SliderCelerity.value = Celerity;
         SliderBumpiness.value = Bumpiness;
     }
@@ -55,10 +59,8 @@ public class SimulationManager : MonoBehaviour
     {
         Wideness = SliderWideness.value;
         Density = SliderDensity.value;
-        Emission = SliderEmission.value;
+        Emission =/* (int)*/SliderEmission.value;
         Celerity = SliderCelerity.value;
         Bumpiness = SliderBumpiness.value;
     }
-
-
 }

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MoveSlider : MonoBehaviour
 {
     public Slider Slider;
-    public int sign = 1;
     private float ShiftUnit;
 
     private void Start()
@@ -20,11 +19,11 @@ public class MoveSlider : MonoBehaviour
         {
             if (coll.gameObject.transform.position.x < transform.position.x)
             {
-                Slider.value += ShiftUnit * sign;
+                Slider.value += ShiftUnit;
             }
             if (coll.gameObject.transform.position.x > transform.position.x)
             {
-                Slider.value -= ShiftUnit * sign;
+                Slider.value -= ShiftUnit;
             }
         }
     }
@@ -35,11 +34,11 @@ public class MoveSlider : MonoBehaviour
         {
             if (other.gameObject.transform.position.x < transform.position.x)
             {
-                Slider.value += ShiftUnit * sign;
+                Slider.value += ShiftUnit;
             }
             if (other.gameObject.transform.position.x > transform.position.x)
             {
-                Slider.value -= ShiftUnit * sign;
+                Slider.value -= ShiftUnit;
             }
         }
     }
