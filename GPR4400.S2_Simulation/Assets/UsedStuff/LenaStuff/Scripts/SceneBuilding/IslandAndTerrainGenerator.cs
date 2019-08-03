@@ -27,7 +27,8 @@ public class IslandAndTerrainGenerator : MonoBehaviour
     private int height = 256;
     private float[,] heights;
     private RaycastHit hit;
-
+    private float miniCoast = 0.05f;
+    private float maxiCoast = 100;
 
     private void Awake()
     {
@@ -44,13 +45,8 @@ public class IslandAndTerrainGenerator : MonoBehaviour
         offsetY = Random.Range(0f, 1000f);
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
         RenderTerrain.terrainData = terrain.terrainData;
+        ResetSeaFloor();
     }
-
-    private void Start()
-    {
-        SimulationManager.Instance.Ground = ResetSeaFloor();
-    }
-
 
     TerrainData GenerateTerrain(TerrainData terrainData)
     {
@@ -83,29 +79,23 @@ public class IslandAndTerrainGenerator : MonoBehaviour
         float yCoord = (float)y / height * Scale + offsetY;
         float h = Mathf.PerlinNoise(xCoord, yCoord);
         h += hParaboloid;
-        return h / 2;
-    }
+        float calcY = h / 2;
 
-    public float ResetSeaFloor()
-    {
-        terrain = GetComponent<Terrain>();
-        float lowestPoint = transform.position.y;
-
-        for (int x = 0; x < width / 2; x++)
+        if (calcY > miniCoast)
         {
-            for (int z = 0; z < height / 2; z++)
+            float maxiCoastTemp = calcY;
+
+            if (maxiCoastTemp < maxiCoast)
             {
-                if (Physics.Raycast(new Vector3(x, 100, z), Vector3.down, out hit, Mathf.Infinity, TerrainLayer))
-                {
-                    float heightY = hit.point.y;
-                    if (heightY < lowestPoint)
-                    {
-                        lowestPoint = heightY;
-                    }
-                }
+                maxiCoast = maxiCoastTemp;
             }
         }
+        return calcY;
+    }
+
+    public void ResetSeaFloor()
+    {
+        SimulationManager.Instance.Ground = maxiCoast;
         SimulationManager.Instance.TerrainGenerated = true;
-        return lowestPoint;
     }
 }

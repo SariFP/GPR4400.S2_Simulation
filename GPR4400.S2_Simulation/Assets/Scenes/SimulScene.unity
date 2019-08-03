@@ -7042,7 +7042,7 @@ PrefabInstance:
     - target: {fileID: 4030409903234121772, guid: e9e20f7ce1f6b1249a0bf76460189522,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.23
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 4030409903234121772, guid: e9e20f7ce1f6b1249a0bf76460189522,
         type: 3}
@@ -7132,7 +7132,7 @@ PrefabInstance:
     - target: {fileID: 1411911224574614728, guid: e9e20f7ce1f6b1249a0bf76460189522,
         type: 3}
       propertyPath: WaterLevel
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6803868254143335151, guid: e9e20f7ce1f6b1249a0bf76460189522, type: 3}

@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class SetOceanHeight : MonoBehaviour
 {
-    public float WaterLevel = 2;
+    public float WaterLevel = 2f;
     private float waterHeight;
+
+    private void Awake()
+    {
+        transform.position = Vector3.zero;
+    }
 
     private void Start()
     {
-        transform.position = Vector3.zero;
+
     }
 
     void Update()
@@ -18,7 +23,7 @@ public class SetOceanHeight : MonoBehaviour
         {
             waterHeight = SimulationManager.Instance.Ground + WaterLevel;
             SimulationManager.Instance.WaterLimit = waterHeight;
-           transform.Translate(new Vector3(transform.position.x, waterHeight, transform.position.z));
+            transform.Translate(new Vector3(transform.position.x, waterHeight, transform.position.z));
             SimulationManager.Instance.TerrainGenerated = false;
         }
     }

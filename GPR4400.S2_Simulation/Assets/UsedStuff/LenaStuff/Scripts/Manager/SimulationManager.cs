@@ -15,14 +15,14 @@ public class SimulationManager : MonoBehaviour
     public Slider SliderCelerity;
     public Slider SliderBumpiness;
 
-    public float Wideness = 60f;
+    public float Wideness = 45f;
     public float Density = 250;
     public float Emission = 5;
     public float Celerity = 2.1f;
     public float Bumpiness = 30f;
 
     public bool TerrainGenerated;
-    public float Ground;
+    public float Ground = 0;
     public float WaterLimit;
 
 
@@ -42,7 +42,7 @@ public class SimulationManager : MonoBehaviour
 
     private void Start()
     {
-        Wideness = 60f;
+        Wideness = 45f;
         Density = 250f;
         Emission = 5;
         Celerity = 2.1f;
