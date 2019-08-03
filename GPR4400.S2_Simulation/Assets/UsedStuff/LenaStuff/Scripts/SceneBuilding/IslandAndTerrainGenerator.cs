@@ -22,7 +22,7 @@ public class IslandAndTerrainGenerator : MonoBehaviour
     public LayerMask TerrainLayer;
 
     private Terrain terrain;
-    public Terrain TeleportTerrain;
+    public Terrain RenderTerrain;
     private int width = 256;
     private int height = 256;
     private float[,] heights;
@@ -43,7 +43,7 @@ public class IslandAndTerrainGenerator : MonoBehaviour
         offsetX = Random.Range(0f, 1000f);
         offsetY = Random.Range(0f, 1000f);
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
-        TeleportTerrain.terrainData = terrain.terrainData;
+        RenderTerrain.terrainData = terrain.terrainData;
     }
 
     private void Start()
