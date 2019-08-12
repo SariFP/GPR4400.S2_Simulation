@@ -3133,11 +3133,11 @@ MonoBehaviour:
   SliderEmission: {fileID: 725222870}
   SliderCelerity: {fileID: 1294083450}
   SliderBumpiness: {fileID: 1899886033}
-  Wideness: 0
-  Density: 0
+  Wideness: 45
+  Density: 250
   Emission: 5
-  Celerity: 0
-  Bumpiness: 0
+  Celerity: 2.1
+  Bumpiness: 30
   TerrainGenerated: 0
   Ground: 0
   WaterLimit: 0
