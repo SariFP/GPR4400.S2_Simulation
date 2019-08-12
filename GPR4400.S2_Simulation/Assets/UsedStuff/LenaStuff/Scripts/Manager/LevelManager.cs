@@ -35,21 +35,6 @@ public class LevelManager : MonoBehaviour
         meshRend = GetComponent<MeshRenderer>();
     }
 
-    private void OnMouseEnter()
-    {
-        meshRend.material = StartHighlightedMat;
-        StartCoroutine(ChangeScene());
-    }
-
-    private void OnCollisionEnter(Collision coll)
-    {
-        if (coll.gameObject.tag == "controller")
-        {
-            meshRend.material = StartHighlightedMat;
-            StartCoroutine(ChangeScene());
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "controller")
