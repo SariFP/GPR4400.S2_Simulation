@@ -42,12 +42,6 @@ public class SimulationManager : MonoBehaviour
 
     private void Start()
     {
-        Wideness = 45f;
-        Density = 250f;
-        Emission = 5;
-        Celerity = 2.1f;
-        Bumpiness = 30f;
-
         SliderWideness.value = Wideness;
         SliderDensity.value = Density;
         SliderEmission.value = /*(int)*/Emission;
