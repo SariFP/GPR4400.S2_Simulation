@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.043387376, g: 0.044548247, b: 0.05929023, a: 1}
+  m_IndirectSpecularColor: {r: 0.043311067, g: 0.04445677, b: 0.059203453, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -310,6 +310,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 298633519215833619, guid: dd5e165e29c0cdc4485bd3277baf3ddb,
+        type: 3}
+      propertyPath: m_Name
+      value: WindZone
+      objectReference: {fileID: 0}
     - target: {fileID: 298633519215833621, guid: dd5e165e29c0cdc4485bd3277baf3ddb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -364,11 +369,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 298633519215833619, guid: dd5e165e29c0cdc4485bd3277baf3ddb,
-        type: 3}
-      propertyPath: m_Name
-      value: WindZone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd5e165e29c0cdc4485bd3277baf3ddb, type: 3}
@@ -1975,7 +1975,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 150
+      value: 100
       mode: 0
       spread: 0
       speed:
