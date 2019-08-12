@@ -12,6 +12,5 @@ public class ParticleEmitter : MonoBehaviour {
         emission = particleSystem.emission;
         emissionValue = SimulationManager.Instance.Emission;
         emission.rateOverTime = new ParticleSystem.MinMaxCurve(emissionValue);
-    }
-       
+    }       
 }
